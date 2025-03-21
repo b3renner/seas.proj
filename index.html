@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Email</title>
+    <script>
+        function enviarEmail() {
+            const checkboxes = document.querySelectorAll('input[name="email"]:checked');
+            const emails = Array.from(checkboxes).map(checkbox => checkbox.value);
+            
+            const assunto = encodeURIComponent(document.getElementById('assunto').value);
+            const corpo = encodeURIComponent(document.getElementById('corpo').value);
+            
+            const link = `https://mail.google.com/mail/?view=cm&fs=1&to=${emails.join(',')}&su=${assunto}&body=${corpo}`;
+            
+            window.open(link, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <h1>Enviar Email</h1>
+    <form onsubmit="event.preventDefault(); enviarEmail();">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Destinatário</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
+                        </label>
+                    </td>
+                    <td>Bernardo</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Bernardo R.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Renan</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Caio</td>
+                </tr>
+            </tbody>
+        </table>
+                   
+        <div>
+            <label for="assunto">Assunto:</label><br>
+            <input type="text" id="assunto" required>
+        </div>
+        <div>
+            <label for="corpo">Corpo da Mensagem:</label><br>
+            <textarea id="corpo" rows="4" required></textarea>
+        </div>
+        <button type="submit">Enviar Email</button>
+    </form>
+</body>
+</html>

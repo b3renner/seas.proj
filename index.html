@@ -1,26 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enviar Email</title>
-    <script>
-        function enviarEmail() {
-            const checkboxes = document.querySelectorAll('input[name="email"]:checked');
-            const emails = Array.from(checkboxes).map(checkbox => checkbox.value);
-            
-            const assunto = encodeURIComponent(document.getElementById('assunto').value);
-            const corpo = encodeURIComponent(document.getElementById('corpo').value);
-            
-            const link = `https://mail.google.com/mail/?view=cm&fs=1&to=${emails.join(',')}&su=${assunto}&body=${corpo}`;
-            
-            window.open(link, '_blank');
-        }
-    </script>
+    <script src="script.js"></script>
+    <link rel="Website Icon" href="mail.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,700&display=swap" rel="stylesheet">
+    <title>S.E.A.S</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
+<header>
+    <div class="interface">
+        <div class="quadrado-esquerdo">
+            <img src="logo.png" alt="Logo" />
+        </div>
+        <div class="menu-desktop">
+        <nav>
+            <ul class="corheader">
+                <li><a href="#fundo"> 61</a></li>
+                <li><a href="#61">62</a></li>
+                <li><a href="#62">71</a></li>
+                <li><a href="#71">81</a></li>
+                <li><a href="#81">82</a></li>
+                <li><a href="#82">91</a></li>
+                <li><a href="#91">111</a></li>
+                <li><a href="#111">121</a></li>
+                <li><a href="#121">131</a></li>
+            </ul>
+        </nav>
+        </div>
+        <div class="quadrado-direito">
+            <nav>
+                <ul>
+                    <li><a href="#fundo2">E-mail</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div> 
+</header>
+
 <body>
-    <h1>Enviar Email</h1>
+
+    <section id="fundo">
+        <div>
+            <h1>S.E.A.S</h1>
+            <h3> Sistema de E-mails Automáticos do Sinodal </h3>
+        </div>
+    </section>
+    
     <form onsubmit="event.preventDefault(); enviarEmail();">
+        <!-- 61-->
+        <section class="turma" id="61">
+            <h2> Turma 61 </h2> 
         <table border="1">
             <thead>
                 <tr>
@@ -63,16 +103,404 @@
                 </tr>
             </tbody>
         </table>
-                   
-        <div>
-            <label for="assunto">Assunto:</label><br>
-            <input type="text" id="assunto" required>
+        </section>
+
+        <!--62 -->
+        <section class="turma" id="62">
+            <h2> Turma 62 </h2> 
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Destinatário</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
+                        </label>
+                    </td>
+                    <td>Bernardo</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Bernardo R.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Renan</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Caio</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+
+        <!-- 71-->
+        <section class="turma" id="71">
+            <h2> Turma 71 </h2> 
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Destinatário</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
+                        </label>
+                    </td>
+                    <td>Bernardo</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Bernardo R.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Renan</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Caio</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+
+        <!--81-->
+        <section class="turma" id="81">
+            <h2> Turma 81 </h2> 
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Destinatário</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
+                        </label>
+                    </td>
+                    <td>Bernardo</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Bernardo R.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Renan</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Caio</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+
+        <!--82-->
+        <section class="turma" id="82">
+            <h2> Turma 82 </h2> 
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Destinatário</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
+                        </label>
+                    </td>
+                    <td>Bernardo</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Bernardo R.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Renan</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Caio</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+
+        <!--91-->
+        <section class="turma" id="91">
+            <h2> Turma 91 </h2> 
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Destinatário</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
+                        </label>
+                    </td>
+                    <td>Bernardo</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Bernardo R.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Renan</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Caio</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+
+        <!--111-->
+        <section class="turma" id="111">
+            <h2> Turma 111 </h2> 
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Destinatário</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
+                        </label>
+                    </td>
+                    <td>Bernardo</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Bernardo R.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Renan</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Caio</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+
+        <!--121-->
+        <section class="turma" id="121">
+            <h2> Turma 121 </h2> 
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Destinatário</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
+                        </label>
+                    </td>
+                    <td>Bernardo</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Bernardo R.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Renan</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Caio</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+
+        <!--131-->
+        <section class="turma" id="131">
+            <h2> Turma 131 </h2> 
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Destinatário</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
+                        </label>
+                    </td>
+                    <td>Bernardo</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Bernardo R.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Renan</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
+                        </label>
+                    </td>
+                    <td>Caio</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+
+        <!-- email-->
+        <section class="s1">
+        <div id="fundo2">
+            <p> Enviar E-mail </p><br>
+        </div>
+            <label class="h1" for="assunto">Assunto:</label><br>
+            <textarea placeholder="Digite o assunto" id="assunto" required></textarea><br><br><br>
         </div>
         <div>
-            <label for="corpo">Corpo da Mensagem:</label><br>
-            <textarea id="corpo" rows="4" required></textarea>
+            <label class="h1" for="corpo">Corpo da Mensagem:</label><br>
+            <textarea id="corpo" placeholder="Digite a sua mensagem" rows="4" required></textarea><br><br>
         </div>
-        <button type="submit">Enviar Email</button>
+        <button type="submit">Enviar Email</button><br><br><br>
+        </section>
+
     </form>
+
+    <footer>
+        &copy; 2025 Colégio Sinodal Prado Gravataí. Todos os direitos reservados.
+    </footer>
+
 </body>
 </html>

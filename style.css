@@ -307,7 +307,7 @@ table {
     }
 
     #fundo2 {
-        width: 50%; 
+        width: 70%; 
         margin-bottom: 40px;
         padding-bottom: 4%;
     }
@@ -316,7 +316,41 @@ table {
         font-size: x-large;
     }
 
+    #assunto {
+        height: 10%;
+    }
+
     footer {
         width: 93%;
+    }
+}
+
+@media (max-width: 480px) {
+    .interface {
+        flex-direction: column; 
+    }
+
+    .quadrado-esquerdo {
+        display: none;
+    }   
+
+    .quadrado-direito {
+        display: none;
+    }
+
+    .menu-desktop {
+        margin-top: 10px;
+        padding-right: 11%;
+    }   
+
+    #fundo {
+        padding-top: 20%;
+    }
+    #fundo2 { 
+        padding-bottom: 7%;
+    }
+
+    footer {
+        width: 89%;
     }
 }

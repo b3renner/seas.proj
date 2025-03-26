@@ -524,8 +524,7 @@ th, td {
 
     .toggle-button {
         display: block; 
-        width: 10%;
-        height: 5.5%;
+        padding: auto;
         align-items: center;
         justify-content: center;
     }

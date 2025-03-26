@@ -486,6 +486,27 @@ th, td {
     footer {
         width: 93%;
     }
+    
+       th, td {
+         font-size: 12px; 
+         padding: 5px; 
+         word-wrap: break-word; 
+         padding: 8px;
+         text-align: left; 
+     }
+    
+
+    table {
+        width: 100%; 
+        margin: auto;
+        min-width: 600px; 
+    }
+
+    .table-container {
+        overflow-x: auto; 
+        width: 87%; 
+        margin: auto;
+    }
 }
 
 @media (max-width: 480px) {

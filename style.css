@@ -5,7 +5,6 @@ body {
 
 form, h3 {
     font-family: "Nunito", sans-serif;
-
 }
 
 h1, h2, header {
@@ -36,11 +35,25 @@ h1, h2, header {
 .menu-desktop {
     margin: auto;
     background-color: rgb(0, 0, 0);
-    width: 5%;
+    width: auto; 
     border-radius: 12px;
     margin-top: -10px;
     height: 2%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 2.5%; 
+}
+
+.menu-desktop nav ul {
+    list-style-type: none;
+    display: flex; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.menu-desktop nav ul li {
+    padding: 0 1vw; 
 }
 
 .quadrado-esquerdo {
@@ -125,6 +138,27 @@ header nav ul li {
     padding: 0 1vw; 
 }
 
+.toggle-button {
+    position: fixed; 
+    top: 10px; 
+    right: 10px; 
+    background-color: rgb(0, 0, 0);
+    color: rgb(39, 130, 55); 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px; 
+    font-size: 20px; 
+    cursor: pointer; 
+    z-index: 10; 
+    display: none; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); 
+    transition: 0.25s;
+}
+
+.toggle-button:hover {
+    transform: scale(1.08);
+}
+
 #fundo {
     width: 100%;
     height: 100%;
@@ -143,7 +177,7 @@ header nav ul li {
 }
 
 #fundo2 {
-    width: 35%;
+    width: 15%;
     height: 100%;
     margin:auto;
     border-radius: 10px;
@@ -193,10 +227,15 @@ table {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); 
 }
 
+th, td {
+    word-wrap: break-word; 
+    padding: 8px;
+    text-align: left; 
+}
 .turma {
     text-align: center;
     margin: auto;
-    padding-bottom: 5%;
+    padding-bottom: 10%;
 }
 
 .s1 {
@@ -242,17 +281,6 @@ table {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); 
  }
 
- button {
-    background-color: #176431;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    }
 
  footer {
     background-color: #000000;
@@ -266,11 +294,148 @@ table {
     font-size: small;
 }
 
+#verdezao {
+    background-color: #176431; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    width: 70px; 
+    height: 70px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    transition: background-color 0.3s ease; 
+    margin-left: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); 
+}
+
+.clipboard { 
+    background-image: url(clipboard.png); 
+    background-size: 40px 40px; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    width: 100%; 
+    height: 100%; 
+}
+
+.clipboard img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+#verdezao:hover {
+    background-color: #429860; 
+}
+
+#verdezao:active {
+    background-color: #145d2b; 
+}
+
+#verdinho {
+    background-color: #429860; 
+    color: #ffffff; 
+    padding: 20px 20px; 
+    border-radius: 10px; 
+    border: none; 
+    cursor: pointer; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    transition: background-color 0.3s ease; 
+    position: relative; 
+    margin: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); 
+}
+
+#verdinho::before {
+    content: ""; 
+    background-image: url(approve.png); 
+    background-size: 30px 30px; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    position: absolute;  
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 30px; 
+    height: 30px; 
+}
+
+#verdinho:hover {
+    background-color: #5bc175; 
+}
+
+#verdinho:active {
+    background-color: #34a85a; 
+}
+
+    #turma61, #turma71, #turma81, #turma91, #turma111, #turma121, #turma131 {
+        
+        width: 100%;
+        height:20%;
+     }
+
+#enviar {
+    background-color: #176431; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    width: 10%; 
+    height: 10%; 
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    transition: background-color 0.3s ease; 
+    margin-left: 50px;
+    margin: auto;
+    font-family: "Poppins", sans-serif;
+    font-size: large;
+    color: #ffffff;
+}
+
+#enviar:hover {
+    background-color: #429860; 
+}
+
+#enviar:active {
+    background-color: #145d2b; 
+}
+
+#limpar {
+    background-color: #429860; 
+    color: #ffffff; 
+    padding: 20px 30px; 
+    border-radius: 10px; 
+    border: none; 
+    cursor: pointer; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    transition: background-color 0.3s ease; 
+    position: relative; 
+    margin: auto;
+    font-family: "Poppins", sans-serif;
+    font-size: large;
+}        
+
+#limpar:hover {
+    background-color: #5bc175; 
+}
+
+#limpar:active {
+    background-color: #34a85a; 
+}
+
 @media (max-width: 768px) {
     .interface {
         justify-content: space-between; 
     }
 
+    .menu-desktop {
+        padding-top: 4.5%; 
+        font-size: large;
+    }
     .quadrado-esquerdo {
         display: none;
         
@@ -286,15 +451,9 @@ table {
         width: 150%;
     }
 
-    .menu-desktop {
-        width: auto; 
-        margin: -15px 0px;
-        padding-right: 4%; 
-        font-size: large;
-    }
-
     header {
         padding: -10px 0;
+        margin-top: -20px;
     }
 
     header nav ul {
@@ -307,7 +466,7 @@ table {
     }
 
     #fundo2 {
-        width: 70%; 
+        width: 40%; 
         margin-bottom: 40px;
         padding-bottom: 4%;
     }
@@ -338,10 +497,25 @@ table {
         display: none;
     }
 
+    .toggle-button {
+        display: block; 
+        width: 10%;
+        height: 5.5%;
+        align-items: center;
+        justify-content: center;
+    }
+
     .menu-desktop {
-        margin-top: 10px;
-        padding-right: 11%;
-    }   
+        display: none; 
+    }
+
+    .menu-desktop.active {
+        display: flex; 
+        flex-direction: row;
+        margin-top: 15px;
+        font-size: x-large;
+        margin-left: -20px;
+    }
 
     #fundo {
         padding-top: 20%;
@@ -353,4 +527,39 @@ table {
     footer {
         width: 89%;
     }
+
+    #enviar {
+        width: auto;
+    }
+
+    #verdezao {
+        margin: auto;
+    }
+
+    .menu-desktop {
+        width: 100%;
+        padding-left: 10%;
+        padding: 5%;
+    }
+    th, td {
+         font-size: 12px; 
+         padding: 5px; 
+         word-wrap: break-word; 
+         padding: 8px;
+         text-align: left; 
+     }
+    
+
+    table {
+        width: 100%; 
+        margin: auto;
+        min-width: 600px; 
+    }
+
+    .table-container {
+        overflow-x: auto; 
+        width: 87%; 
+        margin: auto;
+    }
+    
 }

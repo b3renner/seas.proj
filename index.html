@@ -24,19 +24,18 @@
             <img src="logo.png" alt="Logo" />
         </div>
         <div class="menu-desktop">
-        <nav>
-            <ul class="corheader">
-                <li><a href="#fundo"> 61</a></li>
-                <li><a href="#61">62</a></li>
-                <li><a href="#62">71</a></li>
-                <li><a href="#71">81</a></li>
-                <li><a href="#81">82</a></li>
-                <li><a href="#82">91</a></li>
-                <li><a href="#91">111</a></li>
-                <li><a href="#111">121</a></li>
-                <li><a href="#121">131</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul class="corheader">
+                    <li><a href="#turma61"> 61</a></li>
+                    <li><a href="#turma71">71</a></li>
+                    <li><a href="#turma81">81</a></li>
+                    <li><a href="#turma82">82</a></li>
+                    <li><a href="#turma91">91</a></li>
+                    <li><a href="#turma111">111</a></li>
+                    <li><a href="#turma121">121</a></li>
+                    <li><a href="#turma131">131</a></li>
+                </ul>
+            </nav>
         </div>
         <div class="quadrado-direito">
             <nav>
@@ -45,7 +44,8 @@
                 </ul>
             </nav>
         </div>
-    </div> 
+    </div>
+    <button id="toggle-header" class="toggle-button">☰</button> 
 </header>
 
 <body>
@@ -56,436 +56,854 @@
             <h3> Sistema de E-mails Automáticos do Sinodal </h3>
         </div>
     </section>
-    
-    <form onsubmit="event.preventDefault(); enviarEmail();">
-        <!-- 61-->
-        <section class="turma" id="61">
-            <h2> Turma 61 </h2> 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Destinatário</th>
-                    <th>Nome</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
-                        </label>
-                    </td>
-                    <td>Bernardo</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Bernardo R.</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Renan</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Caio</td>
-                </tr>
-            </tbody>
-        </table>
-        </section>
+    <div id="turma61"></div>
 
-        <!--62 -->
-        <section class="turma" id="62">
-            <h2> Turma 62 </h2> 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Destinatário</th>
-                    <th>Nome</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
-                        </label>
-                    </td>
-                    <td>Bernardo</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Bernardo R.</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Renan</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Caio</td>
-                </tr>
-            </tbody>
-        </table>
+    <form onsubmit="event.preventDefault(); enviarEmail();">
+
+        <button id="verdezao" class="clipboard" type="button" onclick="selecionartodos()"></button>
+
+        <!-- 61-->
+        <section class="turma" id="turma61">
+            <h2> Turma 61 </h2>
+            <button id="verdinho" type="button" onclick="toggleSelectAll('turma61')">
+            </button>
+            <br><br>
+            <div class="table-container"> <!-- Contêiner para a tabela -->
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Nome Aluno</th>
+                            <th>E-mail Aluno</th>
+                            <th>Nome Responsável 1</th>
+                            <th>E-mail Responsável 1</th>
+                            <th>Nome Responsável 2</th>
+                            <th>E-mail Responsável 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bernardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Rita</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="rita@example.com">
+                                </label>
+                            </td>
+                            <td>Maico</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="maico@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bernardo R.</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
+                                </label>
+                            </td>
+                            <td>Ana</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ana@example.com">
+                                </label>
+                            </td>
+                            <td>Paulo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="paulo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Renan</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Clara</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="clara@example.com">
+                                </label>
+                            </td>
+                            <td>Lucas</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="lucas@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Caio</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Fernanda</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="fernanda@example.com">
+                                </label>
+                            </td>
+                            <td>Ricardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ricardo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!-- Fim do contêiner -->
+            <div id="turma71"></div>
         </section>
 
         <!-- 71-->
-        <section class="turma" id="71">
-            <h2> Turma 71 </h2> 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Destinatário</th>
-                    <th>Nome</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
-                        </label>
-                    </td>
-                    <td>Bernardo</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Bernardo R.</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Renan</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Caio</td>
-                </tr>
-            </tbody>
-        </table>
+        <section class="turma" id="turma71">
+            <h2> Turma 71 </h2>
+            <button id="verdinho" type="button" onclick="toggleSelectAll('turma71')">
+            </button>
+            <br><br>
+            <div class="table-container"> <!-- Contêiner para a tabela -->
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Nome Aluno</th>
+                            <th>E-mail Aluno</th>
+                            <th>Nome Responsável 1</th>
+                            <th>E-mail Responsável 1</th>
+                            <th>Nome Responsável 2</th>
+                            <th>E-mail Responsável 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bernardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Rita</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="rita@example.com">
+                                </label>
+                            </td>
+                            <td>Maico</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="maico@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bernardo R.</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
+                                </label>
+                            </td>
+                            <td>Ana</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ana@example.com">
+                                </label>
+                            </td>
+                            <td>Paulo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="paulo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Renan</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Clara</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="clara@example.com">
+                                </label>
+                            </td>
+                            <td>Lucas</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="lucas@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Caio</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Fernanda</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="fernanda@example.com">
+                                </label>
+                            </td>
+                            <td>Ricardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ricardo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!-- Fim do contêiner -->
+            <div id="turma81"></div>
         </section>
 
         <!--81-->
-        <section class="turma" id="81">
-            <h2> Turma 81 </h2> 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Destinatário</th>
-                    <th>Nome</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
-                        </label>
-                    </td>
-                    <td>Bernardo</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Bernardo R.</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Renan</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Caio</td>
-                </tr>
-            </tbody>
-        </table>
+        <section class="turma" id="turma81">
+            <h2> Turma 81 </h2>
+            <button id="verdinho" type="button" onclick="toggleSelectAll('turma81')">
+            </button>
+            <br><br>
+            <div class="table-container"> <!-- Contêiner para a tabela -->
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Nome Aluno</th>
+                            <th>E-mail Aluno</th>
+                            <th>Nome Responsável 1</th>
+                            <th>E-mail Responsável 1</th>
+                            <th>Nome Responsável 2</th>
+                            <th>E-mail Responsável 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bernardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Rita</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="rita@example.com">
+                                </label>
+                            </td>
+                            <td>Maico</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="maico@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bernardo R.</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
+                                </label>
+                            </td>
+                            <td>Ana</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ana@example.com">
+                                </label>
+                            </td>
+                            <td>Paulo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="paulo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Renan</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Clara</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="clara@example.com">
+                                </label>
+                            </td>
+                            <td>Lucas</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="lucas@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Caio</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Fernanda</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="fernanda@example.com">
+                                </label>
+                            </td>
+                            <td>Ricardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ricardo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!-- Fim do contêiner -->
+            <div id="turma82"></div>
         </section>
 
         <!--82-->
-        <section class="turma" id="82">
-            <h2> Turma 82 </h2> 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Destinatário</th>
-                    <th>Nome</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
-                        </label>
-                    </td>
-                    <td>Bernardo</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Bernardo R.</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Renan</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Caio</td>
-                </tr>
-            </tbody>
-        </table>
+        <section class="turma">
+            <h2> Turma 82 </h2>
+            <button id="verdinho" type="button" onclick="toggleSelectAll('turma82')">
+            </button>
+            <br><br>
+            <div class="table-container"> <!-- Contêiner para a tabela -->
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Nome Aluno</th>
+                            <th>E-mail Aluno</th>
+                            <th>Nome Responsável 1</th>
+                            <th>E-mail Responsável 1</th>
+                            <th>Nome Responsável 2</th>
+                            <th>E-mail Responsável 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bernardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Rita</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="rita@example.com">
+                                </label>
+                            </td>
+                            <td>Maico</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="maico@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bernardo R.</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
+                                </label>
+                            </td>
+                            <td>Ana</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ana@example.com">
+                                </label>
+                            </td>
+                            <td>Paulo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="paulo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Renan</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Clara</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="clara@example.com">
+                                </label>
+                            </td>
+                            <td>Lucas</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="lucas@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Caio</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Fernanda</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="fernanda@example.com">
+                                </label>
+                            </td>
+                            <td>Ricardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ricardo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!-- Fim do contêiner -->
+            <div id="turma91"></div>
         </section>
 
         <!--91-->
-        <section class="turma" id="91">
-            <h2> Turma 91 </h2> 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Destinatário</th>
-                    <th>Nome</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
-                        </label>
-                    </td>
-                    <td>Bernardo</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Bernardo R.</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Renan</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Caio</td>
-                </tr>
-            </tbody>
-        </table>
+        <section class="turma" id="turma91">
+            <h2> Turma 91 </h2>
+            <button id="verdinho" type="button" onclick="toggleSelectAll('turma91')">
+            </button>
+            <br><br>
+            <div class="table-container"> <!-- Contêiner para a tabela -->
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Nome Aluno</th>
+                            <th>E-mail Aluno</th>
+                            <th>Nome Responsável 1</th>
+                            <th>E-mail Responsável 1</th>
+                            <th>Nome Responsável 2</th>
+                            <th>E-mail Responsável 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bernardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Rita</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="rita@example.com">
+                                </label>
+                            </td>
+                            <td>Maico</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="maico@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bernardo R.</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
+                                </label>
+                            </td>
+                            <td>Ana</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ana@example.com">
+                                </label>
+                            </td>
+                            <td>Paulo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="paulo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Renan</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Clara</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="clara@example.com">
+                                </label>
+                            </td>
+                            <td>Lucas</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="lucas@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Caio</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Fernanda</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="fernanda@example.com">
+                                </label>
+                            </td>
+                            <td>Ricardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ricardo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!-- Fim do contêiner -->
+            <div id="turma111"></div>
         </section>
 
         <!--111-->
-        <section class="turma" id="111">
-            <h2> Turma 111 </h2> 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Destinatário</th>
-                    <th>Nome</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
-                        </label>
-                    </td>
-                    <td>Bernardo</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Bernardo R.</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Renan</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Caio</td>
-                </tr>
-            </tbody>
-        </table>
+        <section class="turma" id="turma111">
+            <h2> Turma 111 </h2>
+            <button id="verdinho" type="button" onclick="toggleSelectAll('turma111')">
+            </button>
+            <br><br>
+            <div class="table-container"> <!-- Contêiner para a tabela -->
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Nome Aluno</th>
+                            <th>E-mail Aluno</th>
+                            <th>Nome Responsável 1</th>
+                            <th>E-mail Responsável 1</th>
+                            <th>Nome Responsável 2</th>
+                            <th>E-mail Responsável 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bernardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Rita</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="rita@example.com">
+                                </label>
+                            </td>
+                            <td>Maico</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="maico@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bernardo R.</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
+                                </label>
+                            </td>
+                            <td>Ana</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ana@example.com">
+                                </label>
+                            </td>
+                            <td>Paulo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="paulo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Renan</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Clara</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="clara@example.com">
+                                </label>
+                            </td>
+                            <td>Lucas</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="lucas@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Caio</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Fernanda</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="fernanda@example.com">
+                                </label>
+                            </td>
+                            <td>Ricardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ricardo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!-- Fim do contêiner -->
+            <div id="turma121"></div>
         </section>
 
         <!--121-->
-        <section class="turma" id="121">
-            <h2> Turma 121 </h2> 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Destinatário</th>
-                    <th>Nome</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
-                        </label>
-                    </td>
-                    <td>Bernardo</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Bernardo R.</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Renan</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Caio</td>
-                </tr>
-            </tbody>
-        </table>
+        <section class="turma" id="turma121">
+            <h2> Turma 121 </h2>
+            <button id="verdinho" type="button" onclick="toggleSelectAll('turma121')">
+            </button>
+            <br><br>
+            <div class="table-container"> <!-- Contêiner para a tabela -->
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Nome Aluno</th>
+                            <th>E-mail Aluno</th>
+                            <th>Nome Responsável 1</th>
+                            <th>E-mail Responsável 1</th>
+                            <th>Nome Responsável 2</th>
+                            <th>E-mail Responsável 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bernardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Rita</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="rita@example.com">
+                                </label>
+                            </td>
+                            <td>Maico</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="maico@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bernardo R.</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
+                                </label>
+                            </td>
+                            <td>Ana</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ana@example.com">
+                                </label>
+                            </td>
+                            <td>Paulo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="paulo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Renan</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Clara</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="clara@example.com">
+                                </label>
+                            </td>
+                            <td>Lucas</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="lucas@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Caio</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Fernanda</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="fernanda@example.com">
+                                </label>
+                            </td>
+                            <td>Ricardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ricardo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!-- Fim do contêiner -->
         </section>
 
         <!--131-->
-        <section class="turma" id="131">
-            <h2> Turma 131 </h2> 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Destinatário</th>
-                    <th>Nome</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="bernardomrenner08@gmail.com"> bernardomrenner08@gmail.com
-                        </label>
-                    </td>
-                    <td>Bernardo</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000149@sinodalprado.com.br"> 00000149@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Bernardo R.</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000291@sinodalprado.com.br"> 00000291@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Renan</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="email" value="00000480@sinodalprado.com.br"> 00000480@sinodalprado.com.br
-                        </label>
-                    </td>
-                    <td>Caio</td>
-                </tr>
-            </tbody>
-        </table>
+        <section class="turma" id="turma131">
+            <h2> Turma 131 </h2>
+            <button id="verdinho" type="button" onclick="toggleSelectAll('turma131')"></button>
+            <br><br>
+            <div class="table-container"> <!-- Contêiner para a tabela -->
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Nome Aluno</th>
+                            <th>E-mail Aluno</th>
+                            <th>Nome Responsável 1</th>
+                            <th>E-mail Responsável 1</th>
+                            <th>Nome Responsável 2</th>
+                            <th>E-mail Responsável 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bernardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Rita</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="rita@example.com">
+                                </label>
+                            </td>
+                            <td>Maico</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="maico@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bernardo R.</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
+                                </label>
+                            </td>
+                            <td>Ana</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ana@example.com">
+                                </label>
+                            </td>
+                            <td>Paulo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="paulo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Renan</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Clara</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="clara@example.com">
+                                </label>
+                            </td>
+                            <td>Lucas</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="lucas@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Caio</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
+                                </label>
+                            </td>
+                            <td>Fernanda</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="fernanda@example.com">
+                                </label>
+                            </td>
+                            <td>Ricardo</td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="email" value="ricardo@example.com">
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!-- Fim do contêiner -->
         </section>
 
         <!-- email-->
         <section class="s1">
-        <div id="fundo2">
-            <p> Enviar E-mail </p><br>
-        </div>
+            <div id="fundo2">
+                <p> E-mail </p><br>
+            </div>
             <label class="h1" for="assunto">Assunto:</label><br>
             <textarea placeholder="Digite o assunto" id="assunto" required></textarea><br><br><br>
         </div>
@@ -493,7 +911,9 @@
             <label class="h1" for="corpo">Corpo da Mensagem:</label><br>
             <textarea id="corpo" placeholder="Digite a sua mensagem" rows="4" required></textarea><br><br>
         </div>
-        <button type="submit">Enviar Email</button><br><br><br>
+        <button id="enviar" type="submit">Enviar Email</button><br><br><br>
+        <button id="limpar" type="button" onclick="clearForm()">Limpar Formulário</button>
+        <br><br>
         </section>
 
     </form>

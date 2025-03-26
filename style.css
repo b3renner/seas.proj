@@ -580,6 +580,11 @@ th, td {
         min-width: 600px; 
     }
 
+    .turma {
+        
+        padding-bottom: 30%;
+    }
+
     .table-container {
         overflow-x: auto; 
         width: 87%; 

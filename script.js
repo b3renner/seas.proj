@@ -9,3 +9,40 @@ function enviarEmail() {
     
     window.open(link, '_blank');
 }
+
+function toggleSelectAll(turmaId) {
+    const checkboxes = document.querySelectorAll(`#${turmaId} input[name="email"]`);
+    const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+    
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = !allChecked;
+    });
+}
+
+function selecionartodos() {
+    const checkboxes = document.querySelectorAll(`input[name="email"]`);
+    const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+    
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = !allChecked;
+    });
+}
+
+function clearForm() {
+    const checkboxes = document.querySelectorAll('input[name="email"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    
+    document.getElementById('assunto').value = '';
+    document.getElementById('corpo').value = '';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('toggle-header');
+    const menuDesktop = document.querySelector('.menu-desktop');
+
+    toggleButton.addEventListener('click', function() {
+        menuDesktop.classList.toggle('active'); 
+    });
+});

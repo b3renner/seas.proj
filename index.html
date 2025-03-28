@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
     <link rel="Website Icon" href="mail.png">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,700&display=swap" rel="stylesheet">
@@ -21,7 +19,7 @@
 <header>
     <div class="interface">
         <div class="quadrado-esquerdo">
-            <img src="logo.png" alt="Logo" />
+            <img src="logo.png" alt="Logo" onclick="window.location.href='#fundo'"/>
         </div>
         <div class="menu-desktop">
             <nav>
@@ -61,12 +59,15 @@
     <form onsubmit="event.preventDefault(); enviarEmail();">
 
         <button id="verdezao" class="clipboard" type="button" onclick="selecionartodos()"></button>
+        <button id="verdezao" class="clipboard" type="button" onclick="todosAlunos()"></button>
+        <button id="verdezao" class="clipboard" type="button" onclick="todosResponsaveis()"></button>
 
         <!-- 61-->
         <section class="turma" id="turma61">
             <h2> Turma 61 </h2>
+            <button id="verdinho" type="button" onclick="selecionarAlunos('turma61')"></button>
             <button id="verdinho" type="button" onclick="toggleSelectAll('turma61')">
-            </button>
+            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma61')"></button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -170,8 +171,9 @@
         <!-- 71-->
         <section class="turma" id="turma71">
             <h2> Turma 71 </h2>
-            <button id="verdinho" type="button" onclick="toggleSelectAll('turma71')">
-            </button>
+            <button id="verdinho" type="button" onclick="selecionarAlunos('turma71')"></button>
+            <button id="verdinho" type="button" onclick="toggleSelectAll('turma71')"></button>
+            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma71')"></button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -275,8 +277,9 @@
         <!--81-->
         <section class="turma" id="turma81">
             <h2> Turma 81 </h2>
-            <button id="verdinho" type="button" onclick="toggleSelectAll('turma81')">
-            </button>
+            <button id="verdinho" type="button" onclick="selecionarAlunos('turma81')"></button>
+            <button id="verdinho" type="button" onclick="toggleSelectAll('turma81')"></button>
+            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma61')"></button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -380,8 +383,9 @@
         <!--82-->
         <section class="turma">
             <h2> Turma 82 </h2>
-            <button id="verdinho" type="button" onclick="toggleSelectAll('turma82')">
-            </button>
+            <button id="verdinho" type="button" onclick="selecionarAlunos('turma82')"></button>
+            <button id="verdinho" type="button" onclick="toggleSelectAll('turma82')"></button>
+            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma82')"></button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -485,8 +489,9 @@
         <!--91-->
         <section class="turma" id="turma91">
             <h2> Turma 91 </h2>
-            <button id="verdinho" type="button" onclick="toggleSelectAll('turma91')">
-            </button>
+            <button id="verdinho" type="button" onclick="selecionarAlunos('turma91')"></button>
+            <button id="verdinho" type="button" onclick="toggleSelectAll('turma91')"></button>
+            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma91')"></button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -590,8 +595,9 @@
         <!--111-->
         <section class="turma" id="turma111">
             <h2> Turma 111 </h2>
-            <button id="verdinho" type="button" onclick="toggleSelectAll('turma111')">
-            </button>
+            <button id="verdinho" type="button" onclick="selecionarAlunos('turma111')"></button>
+            <button id="verdinho" type="button" onclick="toggleSelectAll('turma111')"></button>
+            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma111')"></button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -695,8 +701,9 @@
         <!--121-->
         <section class="turma" id="turma121">
             <h2> Turma 121 </h2>
-            <button id="verdinho" type="button" onclick="toggleSelectAll('turma121')">
-            </button>
+            <button id="verdinho" type="button" onclick="selecionarAlunos('turma121')"></button>
+            <button id="verdinho" type="button" onclick="toggleSelectAll('turma121')"></button>
+            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma121')"></button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -800,7 +807,9 @@
         <!--131-->
         <section class="turma" id="turma131">
             <h2> Turma 131 </h2>
+            <button id="verdinho" type="button" onclick="selecionarAlunos('turma131')"></button>
             <button id="verdinho" type="button" onclick="toggleSelectAll('turma131')"></button>
+            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma131')"></button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">

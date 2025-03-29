@@ -1,3 +1,4 @@
+
 function enviarEmail() {
     const checkboxes = document.querySelectorAll('input[name="email"]:checked');
     const emails = Array.from(checkboxes).map(checkbox => checkbox.value);
@@ -37,6 +38,15 @@ function clearForm() {
     document.getElementById('assunto').value = '';
     document.getElementById('corpo').value = '';
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('toggle-header');
+    const menuDesktop = document.querySelector('.menu-desktop');
+
+    toggleButton.addEventListener('click', function() {
+        menuDesktop.classList.toggle('active'); 
+    });
+});
 
 function selecionarAlunos(turmaId) {
     const checkboxes = document.querySelectorAll(`#${turmaId} input[name="email"]`);

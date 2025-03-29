@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -58,16 +59,29 @@
 
     <form onsubmit="event.preventDefault(); enviarEmail();">
 
-        <button id="verdezao" class="clipboard" type="button" onclick="selecionartodos()"></button>
-        <button id="verdezao" class="clipboard" type="button" onclick="todosAlunos()"></button>
-        <button id="verdezao" class="clipboard" type="button" onclick="todosResponsaveis()"></button>
-
+        <div class="button-container">
+            <button class="verdezao clipboard" type="button" onclick="todosAlunos()">
+                <img src="todosalunos.png" alt="Todos Alunos" />
+            </button>
+            <button class="verdezao clipboard" type="button" onclick="selecionartodos()">
+                <img src="clipboard.png" alt="Selecionar Todos" />
+            </button>
+            <button class="verdezao clipboard" type="button" onclick="todosResponsaveis()">
+                <img src="todospais.png" alt="Todos Responsáveis" />
+            </button>
+        </div>
         <!-- 61-->
         <section class="turma" id="turma61">
             <h2> Turma 61 </h2>
-            <button id="verdinho" type="button" onclick="selecionarAlunos('turma61')"></button>
-            <button id="verdinho" type="button" onclick="toggleSelectAll('turma61')">
-            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma61')"></button>
+            <button class="verdinho" type="button" onclick="selecionarAlunos('turma61')">
+                <img src="aluno.png" alt="Todos Alunos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="toggleSelectAll('turma61')">
+                <img src="approve.png" alt="Todos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma61')">
+                <img src="pais.png" alt="Todos Responsáveis da Turma" />
+            </button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -82,85 +96,246 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Alunos e Responsáveis da Turma 61 -->
                         <tr>
-                            <td>Bernardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Rita</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="rita@example.com">
-                                </label>
-                            </td>
-                            <td>Maico</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="maico@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 1</td>
+                            <td><label><input type="checkbox" name="email" value="aluno1@example.com"></label></td>
+                            <td>Responsável 1.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.1@example.com"></label></td>
+                            <td>Responsável 1.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.2@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Bernardo R.</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
-                                </label>
-                            </td>
-                            <td>Ana</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ana@example.com">
-                                </label>
-                            </td>
-                            <td>Paulo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="paulo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 2</td>
+                            <td><label><input type="checkbox" name="email" value="aluno2@example.com"></label></td>
+                            <td>Responsável 2.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.1@example.com"></label></td>
+                            <td>Responsável 2.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.2@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Renan</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Clara</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="clara@example.com">
-                                </label>
-                            </td>
-                            <td>Lucas</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="lucas@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 3</td>
+                            <td><label><input type="checkbox" name="email" value="aluno3@example.com"></label></td>
+                            <td>Responsável 3.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.1@example.com"></label></td>
+                            <td>Responsável 3.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.2@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Caio</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Fernanda</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="fernanda@example.com">
-                                </label>
-                            </td>
-                            <td>Ricardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ricardo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 4</td>
+                            <td><label><input type="checkbox" name="email" value="aluno4@example.com"></label></td>
+                            <td>Responsável 4.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.1@example.com"></label></td>
+                            <td>Responsável 4.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 5</td>
+                            <td><label><input type="checkbox" name="email" value="aluno5@example.com"></label></td>
+                            <td>Responsável 5.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.1@example.com"></label></td>
+                            <td>Responsável 5.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 6</td>
+                            <td><label><input type="checkbox" name="email" value="aluno6@example.com"></label></td>
+                            <td>Responsável 6.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.1@example.com"></label></td>
+                            <td>Responsável 6.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 7</td>
+                            <td><label><input type="checkbox" name="email" value="aluno7@example.com"></label></td>
+                            <td>Responsável 7.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.1@example.com"></label></td>
+                            <td>Responsável 7.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 8</td>
+                            <td><label><input type="checkbox" name="email" value="aluno8@example.com"></label></td>
+                            <td>Responsável 8.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.1@example.com"></label></td>
+                            <td>Responsável 8.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 9</td>
+                            <td><label><input type="checkbox" name="email" value="aluno9@example.com"></label></td>
+                            <td>Responsável 9.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.1@example.com"></label></td>
+                            <td>Responsável 9.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 10</td>
+                            <td><label><input type="checkbox" name="email" value="aluno10@example.com"></label></td>
+                            <td>Responsável 10.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.1@example.com"></label></td>
+                            <td>Responsável 10.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 11</td>
+                            <td><label><input type="checkbox" name="email" value="aluno11@example.com"></label></td>
+                            <td>Responsável 11.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.1@example.com"></label></td>
+                            <td>Responsável 11.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 12</td>
+                            <td><label><input type="checkbox" name="email" value="aluno12@example.com"></label></td>
+                            <td>Responsável 12.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.1@example.com"></label></td>
+                            <td>Responsável 12.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 13</td>
+                            <td><label><input type="checkbox" name="email" value="aluno13@example.com"></label></td>
+                            <td>Responsável 13.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.1@example.com"></label></td>
+                            <td>Responsável 13.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 14</td>
+                            <td><label><input type="checkbox" name="email" value="aluno14@example.com"></label></td>
+                            <td>Responsável 14.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.1@example.com"></label></td>
+                            <td>Responsável 14.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 15</td>
+                            <td><label><input type="checkbox" name="email" value="aluno15@example.com"></label></td>
+                            <td>Responsável 15.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel15.1@example.com"></label></td>
+                            <td>Responsável 15.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel15.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 16</td>
+                            <td><label><input type="checkbox" name="email" value="aluno16@example.com"></label></td>
+                            <td>Responsável 16.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel16.1@example.com"></label></td>
+                            <td>Responsável 16.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel16.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 17</td>
+                            <td><label><input type="checkbox" name="email" value="aluno17@example.com"></label></td>
+                            <td>Responsável 17.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel17.1@example.com"></label></td>
+                            <td>Responsável 17.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel17.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 18</td>
+                            <td><label><input type="checkbox" name="email" value="aluno18@example.com"></label></td>
+                            <td>Responsável 18.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel18.1@example.com"></label></td>
+                            <td>Responsável 18.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel18.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 19</td>
+                            <td><label><input type="checkbox" name="email" value="aluno19@example.com"></label></td>
+                            <td>Responsável 19.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel19.1@example.com"></label></td>
+                            <td>Responsável 19.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel19.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 20</td>
+                            <td><label><input type="checkbox" name="email" value="aluno20@example.com"></label></td>
+                            <td>Responsável 20.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel20.1@example.com"></label></td>
+                            <td>Responsável 20.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel20.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 21</td>
+                            <td><label><input type="checkbox" name="email" value="aluno21@example.com"></label></td>
+                            <td>Responsável 21.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel21.1@example.com"></label></td>
+                            <td>Responsável 21.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel21.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 22</td>
+                            <td><label><input type="checkbox" name="email" value="aluno22@example.com"></label></td>
+                            <td>Responsável 22.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel22.1@example.com"></label></td>
+                            <td>Responsável 22.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel22.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 23</td>
+                            <td><label><input type="checkbox" name="email" value="aluno23@example.com"></label></td>
+                            <td>Responsável 23.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel23.1@example.com"></label></td>
+                            <td>Responsável 23.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel23.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 24</td>
+                            <td><label><input type="checkbox" name="email" value="aluno24@example.com"></label></td>
+                            <td>Responsável 24.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel24.1@example.com"></label></td>
+                            <td>Responsável 24.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel24.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 25</td>
+                            <td><label><input type="checkbox" name="email" value="aluno25@example.com"></label></td>
+                            <td>Responsável 25.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel25.1@example.com"></label></td>
+                            <td>Responsável 25.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel25.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 26</td>
+                            <td><label><input type="checkbox" name="email" value="aluno26@example.com"></label></td>
+                            <td>Responsável 26.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel26.1@example.com"></label></td>
+                            <td>Responsável 26.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel26.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 27</td>
+                            <td><label><input type="checkbox" name="email" value="aluno27@example.com"></label></td>
+                            <td>Responsável 27.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel27.1@example.com"></label></td>
+                            <td>Responsável 27.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel27.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 28</td>
+                            <td><label><input type="checkbox" name="email" value="aluno28@example.com"></label></td>
+                            <td>Responsável 28.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel28.1@example.com"></label></td>
+                            <td>Responsável 28.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel28.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 29</td>
+                            <td><label><input type="checkbox" name="email" value="aluno29@example.com"></label></td>
+                            <td>Responsável 29.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel29.1@example.com"></label></td>
+                            <td>Responsável 29.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel29.2@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 30</td>
+                            <td><label><input type="checkbox" name="email" value="aluno30@example.com"></label></td>
+                            <td>Responsável 30.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel30.1@example.com"></label></td>
+                            <td>Responsável 30.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel30.2@example.com"></label></td>
                         </tr>
                     </tbody>
                 </table>
@@ -171,9 +346,15 @@
         <!-- 71-->
         <section class="turma" id="turma71">
             <h2> Turma 71 </h2>
-            <button id="verdinho" type="button" onclick="selecionarAlunos('turma71')"></button>
-            <button id="verdinho" type="button" onclick="toggleSelectAll('turma71')"></button>
-            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma71')"></button>
+            <button class="verdinho" type="button" onclick="selecionarAlunos('turma71')">
+                <img src="aluno.png" alt="Todos Alunos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="toggleSelectAll('turma71')">
+                <img src="approve.png" alt="Todos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma71')">
+                <img src="pais.png" alt="Todos Responsáveis da Turma" />
+            </button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -188,85 +369,245 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Alunos e Responsáveis da Turma 71 -->
                         <tr>
-                            <td>Bernardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Rita</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="rita@example.com">
-                                </label>
-                            </td>
-                            <td>Maico</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="maico@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 1</td>
+                            <td><label><input type="checkbox" name="email" value="aluno1_71@example.com"></label></td>
+                            <td>Responsável 1.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.1_71@example.com"></label></td>
+                            <td>Responsável 1.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Bernardo R.</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
-                                </label>
-                            </td>
-                            <td>Ana</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ana@example.com">
-                                </label>
-                            </td>
-                            <td>Paulo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="paulo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 2</td>
+                            <td><label><input type="checkbox" name="email" value="aluno2_71@example.com"></label></td>
+                            <td>Responsável 2.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.1_71@example.com"></label></td>
+                            <td>Responsável 2.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Renan</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Clara</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="clara@example.com">
-                                </label>
-                            </td>
-                            <td>Lucas</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="lucas@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 3</td>
+                            <td><label><input type="checkbox" name="email" value="aluno3_71@example.com"></label></td>
+                            <td>Responsável 3.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.1_71@example.com"></label></td>
+                            <td>Responsável 3.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Caio</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Fernanda</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="fernanda@example.com">
-                                </label>
-                            </td>
-                            <td>Ricardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ricardo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 4</td>
+                            <td><label><input type="checkbox" name="email" value="aluno4_71@example.com"></label></td>
+                            <td>Responsável 4.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.1_71@example.com"></label></td>
+                            <td>Responsável 4.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 5</td>
+                            <td><label><input type="checkbox" name="email" value="aluno5_71@example.com"></label></td>
+                            <td>Responsável 5.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.1_71@example.com"></label></td>
+                            <td>Responsável 5.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 6</td>
+                            <td><label><input type="checkbox" name="email" value="aluno6_71@example.com"></label></td>
+                            <td>Responsável 6.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.1_71@example.com"></label></td>
+                            <td>Responsável 6.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 7</td>
+                            <td><label><input type="checkbox" name="email" value="aluno7_71@example.com"></label></td>
+                            <td>Responsável 7.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.1_71@example.com"></label></td>
+                            <td>Responsável 7.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 8</td>
+                            <td><label><input type="checkbox" name="email" value="aluno8_71@example.com"></label></td>
+                            <td>Responsável 8.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.1_71@example.com"></label></td>
+                            <td>Responsável 8.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 9</td>
+                            <td><label><input type="checkbox" name="email" value="aluno9_71@example.com"></label></td>
+                            <td>Responsável 9.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.1_71@example.com"></label></td>
+                            <td>Responsável 9.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 10</td>
+                            <td><label><input type="checkbox" name="email" value="aluno10_71@example.com"></label></td>
+                            <td>Responsável 10.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.1_71@example.com"></label></td>
+                            <td>Responsável 10.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 11</td>
+                            <td><label><input type="checkbox" name="email" value="aluno11_71@example.com"></label></td>
+                            <td>Responsável 11.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.1_71@example.com"></label></td>
+                            <td>Responsável 11.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 12</td>
+                            <td><label><input type="checkbox" name="email" value="aluno12_71@example.com"></label></td>
+                            <td>Responsável 12.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.1_71@example.com"></label></td>
+                            <td>Responsável 12.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 13</td>
+                            <td><label><input type="checkbox" name="email" value="aluno13_71@example.com"></label></td>
+                            <td>Responsável 13.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.1_71@example.com"></label></td>
+                            <td>Responsável 13.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 14</td>
+                            <td><label><input type="checkbox" name="email" value="aluno14_71@example.com"></label></td>
+                            <td>Responsável 14.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.1_71@example.com"></label></td>
+                            <td>Responsável 14.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 15</td>
+                            <td><label><input type="checkbox" name="email" value="aluno15_71@example.com"></label></td>
+                            <td>Responsável 15.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel15.1_71@example.com"></label></td>
+                            <td>Responsável 15.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel15.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 16</td>
+                            <td><label><input type="checkbox" name="email" value="aluno16_71@example.com"></label></td>
+                            <td>Responsável 16.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel16.1_71@example.com"></label></td>
+                            <td>Responsável 16.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel16.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 17</td>
+                            <td><label><input type="checkbox" name="email" value="aluno17_71@example.com"></label></td>
+                            <td>Responsável 17.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel17.1_71@example.com"></label></td>
+                            <td>Responsável 17.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel17.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 18</td>
+                            <td><label><input type="checkbox" name="email" value="aluno18_71@example.com"></label></td>
+                            <td>Responsável 18.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel18.1_71@example.com"></label></td>
+                            <td>Responsável 18.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel18.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 19</td>
+                            <td><label><input type="checkbox" name="email" value="aluno19_71@example.com"></label></td>
+                            <td>Responsável 19.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel19.1_71@example.com"></label></td>
+                            <td>Responsável 19.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel19.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 20</td>
+                            <td><label><input type="checkbox" name="email" value="aluno20_71@example.com"></label></td>
+                            <td>Responsável 20.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel20.1_71@example.com"></label></td>
+                            <td>Responsável 20.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel20.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 21</td>
+                            <td><label><input type="checkbox" name="email" value="aluno21_71@example.com"></label></td>
+                            <td>Responsável 21.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel21.1_71@example.com"></label></td>
+                            <td>Responsável 21.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel21.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 22</td>
+                            <td><label><input type="checkbox" name="email" value="aluno22_71@example.com"></label></td>
+                            <td>Responsável 22.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel22.1_71@example.com"></label></td>
+                            <td>Responsável 22.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel22.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 23</td>
+                            <td><label><input type="checkbox" name="email" value="aluno23_71@example.com"></label></td>
+                            <td>Responsável 23.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel23.1_71@example.com"></label></td>
+                            <td>Responsável 23.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel23.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 24</td>
+                            <td><label><input type="checkbox" name="email" value="aluno24_71@example.com"></label></td>
+                            <td>Responsável 24.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel24.1_71@example.com"></label></td>
+                            <td>Responsável 24.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel24.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 25</td>
+                            <td><label><input type="checkbox" name="email" value="aluno25_71@example.com"></label></td>
+                            <td>Responsável 25.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel25.1_71@example.com"></label></td>
+                            <td>Responsável 25.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel25.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 26</td>
+                            <td><label><input type="checkbox" name="email" value="aluno26_71@example.com"></label></td>
+                            <td>Responsável 26.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel26.1_71@example.com"></label></td>
+                            <td>Responsável 26.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel26.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 27</td>
+                            <td><label><input type="checkbox" name="email" value="aluno27_71@example.com"></label></td>
+                            <td>Responsável 27.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel27.1_71@example.com"></label></td>
+                            <td>Responsável 27.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel27.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 28</td>
+                            <td><label><input type="checkbox" name="email" value="aluno28_71@example.com"></label></td>
+                            <td>Responsável 28.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel28.1_71@example.com"></label></td>
+                            <td>Responsável 28.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel28.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 29</td>
+                            <td><label><input type="checkbox" name="email" value="aluno29_71@example.com"></label></td>
+                            <td>Responsável 29.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel29.1_71@example.com"></label></td>
+                            <td>Responsável 29.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel29.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 30 <td><label><input type="checkbox" name="email" value="aluno30_71@example.com"></label></td>
+                            <td>Responsável 30.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel30.1_71@example.com"></label></td>
+                            <td>Responsável 30.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel30.2_71@example.com"></label></td>
                         </tr>
                     </tbody>
                 </table>
@@ -274,12 +615,20 @@
             <div id="turma81"></div>
         </section>
 
-        <!--81-->
+
+
+        <!-- 81-->
         <section class="turma" id="turma81">
             <h2> Turma 81 </h2>
-            <button id="verdinho" type="button" onclick="selecionarAlunos('turma81')"></button>
-            <button id="verdinho" type="button" onclick="toggleSelectAll('turma81')"></button>
-            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma61')"></button>
+            <button class="verdinho" type="button" onclick="selecionarAlunos('turma81')">
+                <img src="aluno.png" alt="Todos Alunos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="toggleSelectAll('turma81')">
+                <img src="approve.png" alt="Todos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma81')">
+                <img src="pais.png" alt="Todos Responsáveis da Turma" />
+            </button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -294,85 +643,245 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Alunos e Responsáveis da Turma 71 -->
                         <tr>
-                            <td>Bernardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Rita</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="rita@example.com">
-                                </label>
-                            </td>
-                            <td>Maico</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="maico@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 1</td>
+                            <td><label><input type="checkbox" name="email" value="aluno1_71@example.com"></label></td>
+                            <td>Responsável 1.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.1_71@example.com"></label></td>
+                            <td>Responsável 1.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Bernardo R.</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
-                                </label>
-                            </td>
-                            <td>Ana</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ana@example.com">
-                                </label>
-                            </td>
-                            <td>Paulo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="paulo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 2</td>
+                            <td><label><input type="checkbox" name="email" value="aluno2_71@example.com"></label></td>
+                            <td>Responsável 2.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.1_71@example.com"></label></td>
+                            <td>Responsável 2.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Renan</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Clara</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="clara@example.com">
-                                </label>
-                            </td>
-                            <td>Lucas</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="lucas@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 3</td>
+                            <td><label><input type="checkbox" name="email" value="aluno3_71@example.com"></label></td>
+                            <td>Responsável 3.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.1_71@example.com"></label></td>
+                            <td>Responsável 3.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Caio</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Fernanda</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="fernanda@example.com">
-                                </label>
-                            </td>
-                            <td>Ricardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ricardo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 4</td>
+                            <td><label><input type="checkbox" name="email" value="aluno4_71@example.com"></label></td>
+                            <td>Responsável 4.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.1_71@example.com"></label></td>
+                            <td>Responsável 4.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 5</td>
+                            <td><label><input type="checkbox" name="email" value="aluno5_71@example.com"></label></td>
+                            <td>Responsável 5.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.1_71@example.com"></label></td>
+                            <td>Responsável 5.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 6</td>
+                            <td><label><input type="checkbox" name="email" value="aluno6_71@example.com"></label></td>
+                            <td>Responsável 6.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.1_71@example.com"></label></td>
+                            <td>Responsável 6.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 7</td>
+                            <td><label><input type="checkbox" name="email" value="aluno7_71@example.com"></label></td>
+                            <td>Responsável 7.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.1_71@example.com"></label></td>
+                            <td>Responsável 7.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 8</td>
+                            <td><label><input type="checkbox" name="email" value="aluno8_71@example.com"></label></td>
+                            <td>Responsável 8.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.1_71@example.com"></label></td>
+                            <td>Responsável 8.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 9</td>
+                            <td><label><input type="checkbox" name="email" value="aluno9_71@example.com"></label></td>
+                            <td>Responsável 9.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.1_71@example.com"></label></td>
+                            <td>Responsável 9.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 10</td>
+                            <td><label><input type="checkbox" name="email" value="aluno10_71@example.com"></label></td>
+                            <td>Responsável 10.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.1_71@example.com"></label></td>
+                            <td>Responsável 10.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 11</td>
+                            <td><label><input type="checkbox" name="email" value="aluno11_71@example.com"></label></td>
+                            <td>Responsável 11.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.1_71@example.com"></label></td>
+                            <td>Responsável 11.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 12</td>
+                            <td><label><input type="checkbox" name="email" value="aluno12_71@example.com"></label></td>
+                            <td>Responsável 12.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.1_71@example.com"></label></td>
+                            <td>Responsável 12.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 13</td>
+                            <td><label><input type="checkbox" name="email" value="aluno13_71@example.com"></label></td>
+                            <td>Responsável 13.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.1_71@example.com"></label></td>
+                            <td>Responsável 13.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 14</td>
+                            <td><label><input type="checkbox" name="email" value="aluno14_71@example.com"></label></td>
+                            <td>Responsável 14.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.1_71@example.com"></label></td>
+                            <td>Responsável 14.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 15</td>
+                            <td><label><input type="checkbox" name="email" value="aluno15_71@example.com"></label></td>
+                            <td>Responsável 15.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel15.1_71@example.com"></label></td>
+                            <td>Responsável 15.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel15.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 16</td>
+                            <td><label><input type="checkbox" name="email" value="aluno16_71@example.com"></label></td>
+                            <td>Responsável 16.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel16.1_71@example.com"></label></td>
+                            <td>Responsável 16.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel16.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 17</td>
+                            <td><label><input type="checkbox" name="email" value="aluno17_71@example.com"></label></td>
+                            <td>Responsável 17.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel17.1_71@example.com"></label></td>
+                            <td>Responsável 17.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel17.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 18</td>
+                            <td><label><input type="checkbox" name="email" value="aluno18_71@example.com"></label></td>
+                            <td>Responsável 18.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel18.1_71@example.com"></label></td>
+                            <td>Responsável 18.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel18.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 19</td>
+                            <td><label><input type="checkbox" name="email" value="aluno19_71@example.com"></label></td>
+                            <td>Responsável 19.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel19.1_71@example.com"></label></td>
+                            <td>Responsável 19.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel19.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 20</td>
+                            <td><label><input type="checkbox" name="email" value="aluno20_71@example.com"></label></td>
+                            <td>Responsável 20.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel20.1_71@example.com"></label></td>
+                            <td>Responsável 20.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel20.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 21</td>
+                            <td><label><input type="checkbox" name="email" value="aluno21_71@example.com"></label></td>
+                            <td>Responsável 21.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel21.1_71@example.com"></label></td>
+                            <td>Responsável 21.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel21.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 22</td>
+                            <td><label><input type="checkbox" name="email" value="aluno22_71@example.com"></label></td>
+                            <td>Responsável 22.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel22.1_71@example.com"></label></td>
+                            <td>Responsável 22.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel22.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 23</td>
+                            <td><label><input type="checkbox" name="email" value="aluno23_71@example.com"></label></td>
+                            <td>Responsável 23.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel23.1_71@example.com"></label></td>
+                            <td>Responsável 23.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel23.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 24</td>
+                            <td><label><input type="checkbox" name="email" value="aluno24_71@example.com"></label></td>
+                            <td>Responsável 24.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel24.1_71@example.com"></label></td>
+                            <td>Responsável 24.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel24.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 25</td>
+                            <td><label><input type="checkbox" name="email" value="aluno25_71@example.com"></label></td>
+                            <td>Responsável 25.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel25.1_71@example.com"></label></td>
+                            <td>Responsável 25.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel25.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 26</td>
+                            <td><label><input type="checkbox" name="email" value="aluno26_71@example.com"></label></td>
+                            <td>Responsável 26.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel26.1_71@example.com"></label></td>
+                            <td>Responsável 26.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel26.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 27</td>
+                            <td><label><input type="checkbox" name="email" value="aluno27_71@example.com"></label></td>
+                            <td>Responsável 27.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel27.1_71@example.com"></label></td>
+                            <td>Responsável 27.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel27.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 28</td>
+                            <td><label><input type="checkbox" name="email" value="aluno28_71@example.com"></label></td>
+                            <td>Responsável 28.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel28.1_71@example.com"></label></td>
+                            <td>Responsável 28.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel28.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 29</td>
+                            <td><label><input type="checkbox" name="email" value="aluno29_71@example.com"></label></td>
+                            <td>Responsável 29.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel29.1_71@example.com"></label></td>
+                            <td>Responsável 29.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel29.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 30 <td><label><input type="checkbox" name="email" value="aluno30_71@example.com"></label></td>
+                            <td>Responsável 30.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel30.1_71@example.com"></label></td>
+                            <td>Responsável 30.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel30.2_71@example.com"></label></td>
                         </tr>
                     </tbody>
                 </table>
@@ -380,12 +889,18 @@
             <div id="turma82"></div>
         </section>
 
-        <!--82-->
-        <section class="turma">
+        <!-- 82-->
+        <section class="turma" id="turma82">
             <h2> Turma 82 </h2>
-            <button id="verdinho" type="button" onclick="selecionarAlunos('turma82')"></button>
-            <button id="verdinho" type="button" onclick="toggleSelectAll('turma82')"></button>
-            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma82')"></button>
+            <button class="verdinho" type="button" onclick="selecionarAlunos('turma82')">
+                <img src="aluno.png" alt="Todos Alunos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="toggleSelectAll('turma82')">
+                <img src="approve.png" alt="Todos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma82')">
+                <img src="pais.png" alt="Todos Responsáveis da Turma" />
+            </button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -400,85 +915,245 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Alunos e Responsáveis da Turma 71 -->
                         <tr>
-                            <td>Bernardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Rita</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="rita@example.com">
-                                </label>
-                            </td>
-                            <td>Maico</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="maico@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 1</td>
+                            <td><label><input type="checkbox" name="email" value="aluno1_71@example.com"></label></td>
+                            <td>Responsável 1.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.1_71@example.com"></label></td>
+                            <td>Responsável 1.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Bernardo R.</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
-                                </label>
-                            </td>
-                            <td>Ana</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ana@example.com">
-                                </label>
-                            </td>
-                            <td>Paulo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="paulo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 2</td>
+                            <td><label><input type="checkbox" name="email" value="aluno2_71@example.com"></label></td>
+                            <td>Responsável 2.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.1_71@example.com"></label></td>
+                            <td>Responsável 2.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Renan</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Clara</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="clara@example.com">
-                                </label>
-                            </td>
-                            <td>Lucas</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="lucas@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 3</td>
+                            <td><label><input type="checkbox" name="email" value="aluno3_71@example.com"></label></td>
+                            <td>Responsável 3.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.1_71@example.com"></label></td>
+                            <td>Responsável 3.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Caio</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Fernanda</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="fernanda@example.com">
-                                </label>
-                            </td>
-                            <td>Ricardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ricardo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 4</td>
+                            <td><label><input type="checkbox" name="email" value="aluno4_71@example.com"></label></td>
+                            <td>Responsável 4.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.1_71@example.com"></label></td>
+                            <td>Responsável 4.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 5</td>
+                            <td><label><input type="checkbox" name="email" value="aluno5_71@example.com"></label></td>
+                            <td>Responsável 5.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.1_71@example.com"></label></td>
+                            <td>Responsável 5.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 6</td>
+                            <td><label><input type="checkbox" name="email" value="aluno6_71@example.com"></label></td>
+                            <td>Responsável 6.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.1_71@example.com"></label></td>
+                            <td>Responsável 6.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 7</td>
+                            <td><label><input type="checkbox" name="email" value="aluno7_71@example.com"></label></td>
+                            <td>Responsável 7.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.1_71@example.com"></label></td>
+                            <td>Responsável 7.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 8</td>
+                            <td><label><input type="checkbox" name="email" value="aluno8_71@example.com"></label></td>
+                            <td>Responsável 8.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.1_71@example.com"></label></td>
+                            <td>Responsável 8.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 9</td>
+                            <td><label><input type="checkbox" name="email" value="aluno9_71@example.com"></label></td>
+                            <td>Responsável 9.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.1_71@example.com"></label></td>
+                            <td>Responsável 9.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 10</td>
+                            <td><label><input type="checkbox" name="email" value="aluno10_71@example.com"></label></td>
+                            <td>Responsável 10.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.1_71@example.com"></label></td>
+                            <td>Responsável 10.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 11</td>
+                            <td><label><input type="checkbox" name="email" value="aluno11_71@example.com"></label></td>
+                            <td>Responsável 11.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.1_71@example.com"></label></td>
+                            <td>Responsável 11.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 12</td>
+                            <td><label><input type="checkbox" name="email" value="aluno12_71@example.com"></label></td>
+                            <td>Responsável 12.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.1_71@example.com"></label></td>
+                            <td>Responsável 12.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 13</td>
+                            <td><label><input type="checkbox" name="email" value="aluno13_71@example.com"></label></td>
+                            <td>Responsável 13.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.1_71@example.com"></label></td>
+                            <td>Responsável 13.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 14</td>
+                            <td><label><input type="checkbox" name="email" value="aluno14_71@example.com"></label></td>
+                            <td>Responsável 14.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.1_71@example.com"></label></td>
+                            <td>Responsável 14.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 15</td>
+                            <td><label><input type="checkbox" name="email" value="aluno15_71@example.com"></label></td>
+                            <td>Responsável 15.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel15.1_71@example.com"></label></td>
+                            <td>Responsável 15.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel15.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 16</td>
+                            <td><label><input type="checkbox" name="email" value="aluno16_71@example.com"></label></td>
+                            <td>Responsável 16.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel16.1_71@example.com"></label></td>
+                            <td>Responsável 16.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel16.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 17</td>
+                            <td><label><input type="checkbox" name="email" value="aluno17_71@example.com"></label></td>
+                            <td>Responsável 17.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel17.1_71@example.com"></label></td>
+                            <td>Responsável 17.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel17.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 18</td>
+                            <td><label><input type="checkbox" name="email" value="aluno18_71@example.com"></label></td>
+                            <td>Responsável 18.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel18.1_71@example.com"></label></td>
+                            <td>Responsável 18.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel18.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 19</td>
+                            <td><label><input type="checkbox" name="email" value="aluno19_71@example.com"></label></td>
+                            <td>Responsável 19.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel19.1_71@example.com"></label></td>
+                            <td>Responsável 19.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel19.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 20</td>
+                            <td><label><input type="checkbox" name="email" value="aluno20_71@example.com"></label></td>
+                            <td>Responsável 20.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel20.1_71@example.com"></label></td>
+                            <td>Responsável 20.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel20.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 21</td>
+                            <td><label><input type="checkbox" name="email" value="aluno21_71@example.com"></label></td>
+                            <td>Responsável 21.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel21.1_71@example.com"></label></td>
+                            <td>Responsável 21.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel21.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 22</td>
+                            <td><label><input type="checkbox" name="email" value="aluno22_71@example.com"></label></td>
+                            <td>Responsável 22.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel22.1_71@example.com"></label></td>
+                            <td>Responsável 22.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel22.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 23</td>
+                            <td><label><input type="checkbox" name="email" value="aluno23_71@example.com"></label></td>
+                            <td>Responsável 23.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel23.1_71@example.com"></label></td>
+                            <td>Responsável 23.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel23.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 24</td>
+                            <td><label><input type="checkbox" name="email" value="aluno24_71@example.com"></label></td>
+                            <td>Responsável 24.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel24.1_71@example.com"></label></td>
+                            <td>Responsável 24.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel24.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 25</td>
+                            <td><label><input type="checkbox" name="email" value="aluno25_71@example.com"></label></td>
+                            <td>Responsável 25.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel25.1_71@example.com"></label></td>
+                            <td>Responsável 25.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel25.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 26</td>
+                            <td><label><input type="checkbox" name="email" value="aluno26_71@example.com"></label></td>
+                            <td>Responsável 26.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel26.1_71@example.com"></label></td>
+                            <td>Responsável 26.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel26.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 27</td>
+                            <td><label><input type="checkbox" name="email" value="aluno27_71@example.com"></label></td>
+                            <td>Responsável 27.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel27.1_71@example.com"></label></td>
+                            <td>Responsável 27.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel27.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 28</td>
+                            <td><label><input type="checkbox" name="email" value="aluno28_71@example.com"></label></td>
+                            <td>Responsável 28.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel28.1_71@example.com"></label></td>
+                            <td>Responsável 28.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel28.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 29</td>
+                            <td><label><input type="checkbox" name="email" value="aluno29_71@example.com"></label></td>
+                            <td>Responsável 29.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel29.1_71@example.com"></label></td>
+                            <td>Responsável 29.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel29.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 30 <td><label><input type="checkbox" name="email" value="aluno30_71@example.com"></label></td>
+                            <td>Responsável 30.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel30.1_71@example.com"></label></td>
+                            <td>Responsável 30.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel30.2_71@example.com"></label></td>
                         </tr>
                     </tbody>
                 </table>
@@ -486,12 +1161,18 @@
             <div id="turma91"></div>
         </section>
 
-        <!--91-->
+        <!-- 91-->
         <section class="turma" id="turma91">
             <h2> Turma 91 </h2>
-            <button id="verdinho" type="button" onclick="selecionarAlunos('turma91')"></button>
-            <button id="verdinho" type="button" onclick="toggleSelectAll('turma91')"></button>
-            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma91')"></button>
+            <button class="verdinho" type="button" onclick="selecionarAlunos('turma91')">
+                <img src="aluno.png" alt="Todos Alunos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="toggleSelectAll('turma91')">
+                <img src="approve.png" alt="Todos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma91')">
+                <img src="pais.png" alt="Todos Responsáveis da Turma" />
+            </button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -506,85 +1187,245 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Alunos e Responsáveis da Turma 71 -->
                         <tr>
-                            <td>Bernardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Rita</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="rita@example.com">
-                                </label>
-                            </td>
-                            <td>Maico</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="maico@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 1</td>
+                            <td><label><input type="checkbox" name="email" value="aluno1_71@example.com"></label></td>
+                            <td>Responsável 1.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.1_71@example.com"></label></td>
+                            <td>Responsável 1.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Bernardo R.</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
-                                </label>
-                            </td>
-                            <td>Ana</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ana@example.com">
-                                </label>
-                            </td>
-                            <td>Paulo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="paulo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 2</td>
+                            <td><label><input type="checkbox" name="email" value="aluno2_71@example.com"></label></td>
+                            <td>Responsável 2.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.1_71@example.com"></label></td>
+                            <td>Responsável 2.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Renan</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Clara</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="clara@example.com">
-                                </label>
-                            </td>
-                            <td>Lucas</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="lucas@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 3</td>
+                            <td><label><input type="checkbox" name="email" value="aluno3_71@example.com"></label></td>
+                            <td>Responsável 3.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.1_71@example.com"></label></td>
+                            <td>Responsável 3.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Caio</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Fernanda</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="fernanda@example.com">
-                                </label>
-                            </td>
-                            <td>Ricardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ricardo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 4</td>
+                            <td><label><input type="checkbox" name="email" value="aluno4_71@example.com"></label></td>
+                            <td>Responsável 4.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.1_71@example.com"></label></td>
+                            <td>Responsável 4.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 5</td>
+                            <td><label><input type="checkbox" name="email" value="aluno5_71@example.com"></label></td>
+                            <td>Responsável 5.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.1_71@example.com"></label></td>
+                            <td>Responsável 5.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 6</td>
+                            <td><label><input type="checkbox" name="email" value="aluno6_71@example.com"></label></td>
+                            <td>Responsável 6.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.1_71@example.com"></label></td>
+                            <td>Responsável 6.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 7</td>
+                            <td><label><input type="checkbox" name="email" value="aluno7_71@example.com"></label></td>
+                            <td>Responsável 7.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.1_71@example.com"></label></td>
+                            <td>Responsável 7.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 8</td>
+                            <td><label><input type="checkbox" name="email" value="aluno8_71@example.com"></label></td>
+                            <td>Responsável 8.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.1_71@example.com"></label></td>
+                            <td>Responsável 8.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 9</td>
+                            <td><label><input type="checkbox" name="email" value="aluno9_71@example.com"></label></td>
+                            <td>Responsável 9.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.1_71@example.com"></label></td>
+                            <td>Responsável 9.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 10</td>
+                            <td><label><input type="checkbox" name="email" value="aluno10_71@example.com"></label></td>
+                            <td>Responsável 10.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.1_71@example.com"></label></td>
+                            <td>Responsável 10.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 11</td>
+                            <td><label><input type="checkbox" name="email" value="aluno11_71@example.com"></label></td>
+                            <td>Responsável 11.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.1_71@example.com"></label></td>
+                            <td>Responsável 11.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 12</td>
+                            <td><label><input type="checkbox" name="email" value="aluno12_71@example.com"></label></td>
+                            <td>Responsável 12.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.1_71@example.com"></label></td>
+                            <td>Responsável 12.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 13</td>
+                            <td><label><input type="checkbox" name="email" value="aluno13_71@example.com"></label></td>
+                            <td>Responsável 13.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.1_71@example.com"></label></td>
+                            <td>Responsável 13.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 14</td>
+                            <td><label><input type="checkbox" name="email" value="aluno14_71@example.com"></label></td>
+                            <td>Responsável 14.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.1_71@example.com"></label></td>
+                            <td>Responsável 14.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 15</td>
+                            <td><label><input type="checkbox" name="email" value="aluno15_71@example.com"></label></td>
+                            <td>Responsável 15.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel15.1_71@example.com"></label></td>
+                            <td>Responsável 15.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel15.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 16</td>
+                            <td><label><input type="checkbox" name="email" value="aluno16_71@example.com"></label></td>
+                            <td>Responsável 16.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel16.1_71@example.com"></label></td>
+                            <td>Responsável 16.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel16.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 17</td>
+                            <td><label><input type="checkbox" name="email" value="aluno17_71@example.com"></label></td>
+                            <td>Responsável 17.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel17.1_71@example.com"></label></td>
+                            <td>Responsável 17.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel17.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 18</td>
+                            <td><label><input type="checkbox" name="email" value="aluno18_71@example.com"></label></td>
+                            <td>Responsável 18.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel18.1_71@example.com"></label></td>
+                            <td>Responsável 18.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel18.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 19</td>
+                            <td><label><input type="checkbox" name="email" value="aluno19_71@example.com"></label></td>
+                            <td>Responsável 19.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel19.1_71@example.com"></label></td>
+                            <td>Responsável 19.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel19.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 20</td>
+                            <td><label><input type="checkbox" name="email" value="aluno20_71@example.com"></label></td>
+                            <td>Responsável 20.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel20.1_71@example.com"></label></td>
+                            <td>Responsável 20.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel20.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 21</td>
+                            <td><label><input type="checkbox" name="email" value="aluno21_71@example.com"></label></td>
+                            <td>Responsável 21.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel21.1_71@example.com"></label></td>
+                            <td>Responsável 21.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel21.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 22</td>
+                            <td><label><input type="checkbox" name="email" value="aluno22_71@example.com"></label></td>
+                            <td>Responsável 22.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel22.1_71@example.com"></label></td>
+                            <td>Responsável 22.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel22.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 23</td>
+                            <td><label><input type="checkbox" name="email" value="aluno23_71@example.com"></label></td>
+                            <td>Responsável 23.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel23.1_71@example.com"></label></td>
+                            <td>Responsável 23.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel23.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 24</td>
+                            <td><label><input type="checkbox" name="email" value="aluno24_71@example.com"></label></td>
+                            <td>Responsável 24.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel24.1_71@example.com"></label></td>
+                            <td>Responsável 24.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel24.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 25</td>
+                            <td><label><input type="checkbox" name="email" value="aluno25_71@example.com"></label></td>
+                            <td>Responsável 25.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel25.1_71@example.com"></label></td>
+                            <td>Responsável 25.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel25.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 26</td>
+                            <td><label><input type="checkbox" name="email" value="aluno26_71@example.com"></label></td>
+                            <td>Responsável 26.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel26.1_71@example.com"></label></td>
+                            <td>Responsável 26.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel26.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 27</td>
+                            <td><label><input type="checkbox" name="email" value="aluno27_71@example.com"></label></td>
+                            <td>Responsável 27.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel27.1_71@example.com"></label></td>
+                            <td>Responsável 27.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel27.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 28</td>
+                            <td><label><input type="checkbox" name="email" value="aluno28_71@example.com"></label></td>
+                            <td>Responsável 28.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel28.1_71@example.com"></label></td>
+                            <td>Responsável 28.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel28.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 29</td>
+                            <td><label><input type="checkbox" name="email" value="aluno29_71@example.com"></label></td>
+                            <td>Responsável 29.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel29.1_71@example.com"></label></td>
+                            <td>Responsável 29.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel29.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 30 <td><label><input type="checkbox" name="email" value="aluno30_71@example.com"></label></td>
+                            <td>Responsável 30.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel30.1_71@example.com"></label></td>
+                            <td>Responsável 30.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel30.2_71@example.com"></label></td>
                         </tr>
                     </tbody>
                 </table>
@@ -592,12 +1433,18 @@
             <div id="turma111"></div>
         </section>
 
-        <!--111-->
+        <!-- 111-->
         <section class="turma" id="turma111">
             <h2> Turma 111 </h2>
-            <button id="verdinho" type="button" onclick="selecionarAlunos('turma111')"></button>
-            <button id="verdinho" type="button" onclick="toggleSelectAll('turma111')"></button>
-            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma111')"></button>
+            <button class="verdinho" type="button" onclick="selecionarAlunos('turma111')">
+                <img src="aluno.png" alt="Todos Alunos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="toggleSelectAll('turma111')">
+                <img src="approve.png" alt="Todos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma111')">
+                <img src="pais.png" alt="Todos Responsáveis da Turma" />
+            </button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -612,85 +1459,245 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Alunos e Responsáveis da Turma 71 -->
                         <tr>
-                            <td>Bernardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Rita</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="rita@example.com">
-                                </label>
-                            </td>
-                            <td>Maico</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="maico@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 1</td>
+                            <td><label><input type="checkbox" name="email" value="aluno1_71@example.com"></label></td>
+                            <td>Responsável 1.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.1_71@example.com"></label></td>
+                            <td>Responsável 1.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Bernardo R.</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
-                                </label>
-                            </td>
-                            <td>Ana</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ana@example.com">
-                                </label>
-                            </td>
-                            <td>Paulo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="paulo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 2</td>
+                            <td><label><input type="checkbox" name="email" value="aluno2_71@example.com"></label></td>
+                            <td>Responsável 2.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.1_71@example.com"></label></td>
+                            <td>Responsável 2.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Renan</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Clara</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="clara@example.com">
-                                </label>
-                            </td>
-                            <td>Lucas</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="lucas@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 3</td>
+                            <td><label><input type="checkbox" name="email" value="aluno3_71@example.com"></label></td>
+                            <td>Responsável 3.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.1_71@example.com"></label></td>
+                            <td>Responsável 3.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Caio</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Fernanda</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="fernanda@example.com">
-                                </label>
-                            </td>
-                            <td>Ricardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ricardo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 4</td>
+                            <td><label><input type="checkbox" name="email" value="aluno4_71@example.com"></label></td>
+                            <td>Responsável 4.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.1_71@example.com"></label></td>
+                            <td>Responsável 4.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 5</td>
+                            <td><label><input type="checkbox" name="email" value="aluno5_71@example.com"></label></td>
+                            <td>Responsável 5.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.1_71@example.com"></label></td>
+                            <td>Responsável 5.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 6</td>
+                            <td><label><input type="checkbox" name="email" value="aluno6_71@example.com"></label></td>
+                            <td>Responsável 6.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.1_71@example.com"></label></td>
+                            <td>Responsável 6.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 7</td>
+                            <td><label><input type="checkbox" name="email" value="aluno7_71@example.com"></label></td>
+                            <td>Responsável 7.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.1_71@example.com"></label></td>
+                            <td>Responsável 7.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 8</td>
+                            <td><label><input type="checkbox" name="email" value="aluno8_71@example.com"></label></td>
+                            <td>Responsável 8.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.1_71@example.com"></label></td>
+                            <td>Responsável 8.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 9</td>
+                            <td><label><input type="checkbox" name="email" value="aluno9_71@example.com"></label></td>
+                            <td>Responsável 9.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.1_71@example.com"></label></td>
+                            <td>Responsável 9.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 10</td>
+                            <td><label><input type="checkbox" name="email" value="aluno10_71@example.com"></label></td>
+                            <td>Responsável 10.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.1_71@example.com"></label></td>
+                            <td>Responsável 10.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 11</td>
+                            <td><label><input type="checkbox" name="email" value="aluno11_71@example.com"></label></td>
+                            <td>Responsável 11.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.1_71@example.com"></label></td>
+                            <td>Responsável 11.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 12</td>
+                            <td><label><input type="checkbox" name="email" value="aluno12_71@example.com"></label></td>
+                            <td>Responsável 12.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.1_71@example.com"></label></td>
+                            <td>Responsável 12.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 13</td>
+                            <td><label><input type="checkbox" name="email" value="aluno13_71@example.com"></label></td>
+                            <td>Responsável 13.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.1_71@example.com"></label></td>
+                            <td>Responsável 13.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 14</td>
+                            <td><label><input type="checkbox" name="email" value="aluno14_71@example.com"></label></td>
+                            <td>Responsável 14.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.1_71@example.com"></label></td>
+                            <td>Responsável 14.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 15</td>
+                            <td><label><input type="checkbox" name="email" value="aluno15_71@example.com"></label></td>
+                            <td>Responsável 15.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel15.1_71@example.com"></label></td>
+                            <td>Responsável 15.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel15.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 16</td>
+                            <td><label><input type="checkbox" name="email" value="aluno16_71@example.com"></label></td>
+                            <td>Responsável 16.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel16.1_71@example.com"></label></td>
+                            <td>Responsável 16.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel16.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 17</td>
+                            <td><label><input type="checkbox" name="email" value="aluno17_71@example.com"></label></td>
+                            <td>Responsável 17.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel17.1_71@example.com"></label></td>
+                            <td>Responsável 17.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel17.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 18</td>
+                            <td><label><input type="checkbox" name="email" value="aluno18_71@example.com"></label></td>
+                            <td>Responsável 18.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel18.1_71@example.com"></label></td>
+                            <td>Responsável 18.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel18.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 19</td>
+                            <td><label><input type="checkbox" name="email" value="aluno19_71@example.com"></label></td>
+                            <td>Responsável 19.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel19.1_71@example.com"></label></td>
+                            <td>Responsável 19.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel19.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 20</td>
+                            <td><label><input type="checkbox" name="email" value="aluno20_71@example.com"></label></td>
+                            <td>Responsável 20.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel20.1_71@example.com"></label></td>
+                            <td>Responsável 20.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel20.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 21</td>
+                            <td><label><input type="checkbox" name="email" value="aluno21_71@example.com"></label></td>
+                            <td>Responsável 21.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel21.1_71@example.com"></label></td>
+                            <td>Responsável 21.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel21.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 22</td>
+                            <td><label><input type="checkbox" name="email" value="aluno22_71@example.com"></label></td>
+                            <td>Responsável 22.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel22.1_71@example.com"></label></td>
+                            <td>Responsável 22.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel22.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 23</td>
+                            <td><label><input type="checkbox" name="email" value="aluno23_71@example.com"></label></td>
+                            <td>Responsável 23.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel23.1_71@example.com"></label></td>
+                            <td>Responsável 23.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel23.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 24</td>
+                            <td><label><input type="checkbox" name="email" value="aluno24_71@example.com"></label></td>
+                            <td>Responsável 24.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel24.1_71@example.com"></label></td>
+                            <td>Responsável 24.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel24.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 25</td>
+                            <td><label><input type="checkbox" name="email" value="aluno25_71@example.com"></label></td>
+                            <td>Responsável 25.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel25.1_71@example.com"></label></td>
+                            <td>Responsável 25.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel25.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 26</td>
+                            <td><label><input type="checkbox" name="email" value="aluno26_71@example.com"></label></td>
+                            <td>Responsável 26.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel26.1_71@example.com"></label></td>
+                            <td>Responsável 26.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel26.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 27</td>
+                            <td><label><input type="checkbox" name="email" value="aluno27_71@example.com"></label></td>
+                            <td>Responsável 27.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel27.1_71@example.com"></label></td>
+                            <td>Responsável 27.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel27.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 28</td>
+                            <td><label><input type="checkbox" name="email" value="aluno28_71@example.com"></label></td>
+                            <td>Responsável 28.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel28.1_71@example.com"></label></td>
+                            <td>Responsável 28.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel28.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 29</td>
+                            <td><label><input type="checkbox" name="email" value="aluno29_71@example.com"></label></td>
+                            <td>Responsável 29.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel29.1_71@example.com"></label></td>
+                            <td>Responsável 29.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel29.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 30 <td><label><input type="checkbox" name="email" value="aluno30_71@example.com"></label></td>
+                            <td>Responsável 30.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel30.1_71@example.com"></label></td>
+                            <td>Responsável 30.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel30.2_71@example.com"></label></td>
                         </tr>
                     </tbody>
                 </table>
@@ -698,12 +1705,18 @@
             <div id="turma121"></div>
         </section>
 
-        <!--121-->
+        <!-- 121-->
         <section class="turma" id="turma121">
             <h2> Turma 121 </h2>
-            <button id="verdinho" type="button" onclick="selecionarAlunos('turma121')"></button>
-            <button id="verdinho" type="button" onclick="toggleSelectAll('turma121')"></button>
-            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma121')"></button>
+            <button class="verdinho" type="button" onclick="selecionarAlunos('turma121')">
+                <img src="aluno.png" alt="Todos Alunos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="toggleSelectAll('turma121')">
+                <img src="approve.png" alt="Todos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma121')">
+                <img src="pais.png" alt="Todos Responsáveis da Turma" />
+            </button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -718,98 +1731,257 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Alunos e Responsáveis da Turma 71 -->
                         <tr>
-                            <td>Bernardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Rita</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="rita@example.com">
-                                </label>
-                            </td>
-                            <td>Maico</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="maico@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 1</td>
+                            <td><label><input type="checkbox" name="email" value="aluno1_71@example.com"></label></td>
+                            <td>Responsável 1.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.1_71@example.com"></label></td>
+                            <td>Responsável 1.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Bernardo R.</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
-                                </label>
-                            </td>
-                            <td>Ana</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ana@example.com">
-                                </label>
-                            </td>
-                            <td>Paulo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="paulo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 2</td>
+                            <td><label><input type="checkbox" name="email" value="aluno2_71@example.com"></label></td>
+                            <td>Responsável 2.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.1_71@example.com"></label></td>
+                            <td>Responsável 2.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Renan</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Clara</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="clara@example.com">
-                                </label>
-                            </td>
-                            <td>Lucas</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="lucas@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 3</td>
+                            <td><label><input type="checkbox" name="email" value="aluno3_71@example.com"></label></td>
+                            <td>Responsável 3.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.1_71@example.com"></label></td>
+                            <td>Responsável 3.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Caio</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Fernanda</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="fernanda@example.com">
-                                </label>
-                            </td>
-                            <td>Ricardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ricardo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 4</td>
+                            <td><label><input type="checkbox" name="email" value="aluno4_71@example.com"></label></td>
+                            <td>Responsável 4.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.1_71@example.com"></label></td>
+                            <td>Responsável 4.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 5</td>
+                            <td><label><input type="checkbox" name="email" value="aluno5_71@example.com"></label></td>
+                            <td>Responsável 5.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.1_71@example.com"></label></td>
+                            <td>Responsável 5.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 6</td>
+                            <td><label><input type="checkbox" name="email" value="aluno6_71@example.com"></label></td>
+                            <td>Responsável 6.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.1_71@example.com"></label></td>
+                            <td>Responsável 6.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 7</td>
+                            <td><label><input type="checkbox" name="email" value="aluno7_71@example.com"></label></td>
+                            <td>Responsável 7.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.1_71@example.com"></label></td>
+                            <td>Responsável 7.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 8</td>
+                            <td><label><input type="checkbox" name="email" value="aluno8_71@example.com"></label></td>
+                            <td>Responsável 8.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.1_71@example.com"></label></td>
+                            <td>Responsável 8.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 9</td>
+                            <td><label><input type="checkbox" name="email" value="aluno9_71@example.com"></label></td>
+                            <td>Responsável 9.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.1_71@example.com"></label></td>
+                            <td>Responsável 9.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 10</td>
+                            <td><label><input type="checkbox" name="email" value="aluno10_71@example.com"></label></td>
+                            <td>Responsável 10.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.1_71@example.com"></label></td>
+                            <td>Responsável 10.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 11</td>
+                            <td><label><input type="checkbox" name="email" value="aluno11_71@example.com"></label></td>
+                            <td>Responsável 11.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.1_71@example.com"></label></td>
+                            <td>Responsável 11.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 12</td>
+                            <td><label><input type="checkbox" name="email" value="aluno12_71@example.com"></label></td>
+                            <td>Responsável 12.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.1_71@example.com"></label></td>
+                            <td>Responsável 12.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 13</td>
+                            <td><label><input type="checkbox" name="email" value="aluno13_71@example.com"></label></td>
+                            <td>Responsável 13.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.1_71@example.com"></label></td>
+                            <td>Responsável 13.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 14</td>
+                            <td><label><input type="checkbox" name="email" value="aluno14_71@example.com"></label></td>
+                            <td>Responsável 14.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.1_71@example.com"></label></td>
+                            <td>Responsável 14.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 15</td>
+                            <td><label><input type="checkbox" name="email" value="aluno15_71@example.com"></label></td>
+                            <td>Responsável 15.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel15.1_71@example.com"></label></td>
+                            <td>Responsável 15.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel15.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 16</td>
+                            <td><label><input type="checkbox" name="email" value="aluno16_71@example.com"></label></td>
+                            <td>Responsável 16.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel16.1_71@example.com"></label></td>
+                            <td>Responsável 16.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel16.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 17</td>
+                            <td><label><input type="checkbox" name="email" value="aluno17_71@example.com"></label></td>
+                            <td>Responsável 17.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel17.1_71@example.com"></label></td>
+                            <td>Responsável 17.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel17.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 18</td>
+                            <td><label><input type="checkbox" name="email" value="aluno18_71@example.com"></label></td>
+                            <td>Responsável 18.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel18.1_71@example.com"></label></td>
+                            <td>Responsável 18.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel18.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 19</td>
+                            <td><label><input type="checkbox" name="email" value="aluno19_71@example.com"></label></td>
+                            <td>Responsável 19.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel19.1_71@example.com"></label></td>
+                            <td>Responsável 19.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel19.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 20</td>
+                            <td><label><input type="checkbox" name="email" value="aluno20_71@example.com"></label></td>
+                            <td>Responsável 20.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel20.1_71@example.com"></label></td>
+                            <td>Responsável 20.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel20.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 21</td>
+                            <td><label><input type="checkbox" name="email" value="aluno21_71@example.com"></label></td>
+                            <td>Responsável 21.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel21.1_71@example.com"></label></td>
+                            <td>Responsável 21.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel21.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 22</td>
+                            <td><label><input type="checkbox" name="email" value="aluno22_71@example.com"></label></td>
+                            <td>Responsável 22.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel22.1_71@example.com"></label></td>
+                            <td>Responsável 22.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel22.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 23</td>
+                            <td><label><input type="checkbox" name="email" value="aluno23_71@example.com"></label></td>
+                            <td>Responsável 23.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel23.1_71@example.com"></label></td>
+                            <td>Responsável 23.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel23.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 24</td>
+                            <td><label><input type="checkbox" name="email" value="aluno24_71@example.com"></label></td>
+                            <td>Responsável 24.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel24.1_71@example.com"></label></td>
+                            <td>Responsável 24.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel24.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 25</td>
+                            <td><label><input type="checkbox" name="email" value="aluno25_71@example.com"></label></td>
+                            <td>Responsável 25.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel25.1_71@example.com"></label></td>
+                            <td>Responsável 25.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel25.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 26</td>
+                            <td><label><input type="checkbox" name="email" value="aluno26_71@example.com"></label></td>
+                            <td>Responsável 26.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel26.1_71@example.com"></label></td>
+                            <td>Responsável 26.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel26.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 27</td>
+                            <td><label><input type="checkbox" name="email" value="aluno27_71@example.com"></label></td>
+                            <td>Responsável 27.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel27.1_71@example.com"></label></td>
+                            <td>Responsável 27.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel27.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 28</td>
+                            <td><label><input type="checkbox" name="email" value="aluno28_71@example.com"></label></td>
+                            <td>Responsável 28.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel28.1_71@example.com"></label></td>
+                            <td>Responsável 28.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel28.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 29</td>
+                            <td><label><input type="checkbox" name="email" value="aluno29_71@example.com"></label></td>
+                            <td>Responsável 29.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel29.1_71@example.com"></label></td>
+                            <td>Responsável 29.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel29.2_71@example.com"></label></td>
                         </tr>
                     </tbody>
                 </table>
             </div> <!-- Fim do contêiner -->
-             <div id="turma131"></div>
+            <div id="turma131"></div>
         </section>
 
-        <!--131-->
+        <!-- 131-->
         <section class="turma" id="turma131">
             <h2> Turma 131 </h2>
-            <button id="verdinho" type="button" onclick="selecionarAlunos('turma131')"></button>
-            <button id="verdinho" type="button" onclick="toggleSelectAll('turma131')"></button>
-            <button id="verdinho" type="button" onclick="selecionarResponsaveis('turma131')"></button>
+            <button class="verdinho" type="button" onclick="selecionarAlunos('turma131')">
+                <img src="aluno.png" alt="Todos Alunos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="toggleSelectAll('turma131')">
+                <img src="approve.png" alt="Todos da Turma" />
+            </button>
+            <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma131')">
+                <img src="pais.png" alt="Todos Responsáveis da Turma" />
+            </button>
             <br><br>
             <div class="table-container"> <!-- Contêiner para a tabela -->
                 <table border="1">
@@ -824,86 +1996,120 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Alunos e Responsáveis da Turma 71 -->
                         <tr>
-                            <td>Bernardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000149@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Rita</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="rita@example.com">
-                                </label>
-                            </td>
-                            <td>Maico</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="maico@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 1</td>
+                            <td><label><input type="checkbox" name="email" value="aluno1_71@example.com"></label></td>
+                            <td>Responsável 1.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.1_71@example.com"></label></td>
+                            <td>Responsável 1.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel1.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Bernardo R.</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="bernardomrenner08@gmail.com">
-                                </label>
-                            </td>
-                            <td>Ana</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ana@example.com">
-                                </label>
-                            </td>
-                            <td>Paulo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="paulo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 2</td>
+                            <td><label><input type="checkbox" name="email" value="aluno2_71@example.com"></label></td>
+                            <td>Responsável 2.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.1_71@example.com"></label></td>
+                            <td>Responsável 2.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel2.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Renan</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000291@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Clara</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="clara@example.com">
-                                </label>
-                            </td>
-                            <td>Lucas</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="lucas@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 3</td>
+                            <td><label><input type="checkbox" name="email" value="aluno3_71@example.com"></label></td>
+                            <td>Responsável 3.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.1_71@example.com"></label></td>
+                            <td>Responsável 3.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel3.2_71@example.com"></label></td>
                         </tr>
                         <tr>
-                            <td>Caio</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="00000480@sinodalprado.com.br">
-                                </label>
-                            </td>
-                            <td>Fernanda</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="fernanda@example.com">
-                                </label>
-                            </td>
-                            <td>Ricardo</td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" name="email" value="ricardo@example.com">
-                                </label>
-                            </td>
+                            <td>Aluno 4</td>
+                            <td><label><input type="checkbox" name="email" value="aluno4_71@example.com"></label></td>
+                            <td>Responsável 4.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.1_71@example.com"></label></td>
+                            <td>Responsável 4.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel4.2_71@example.com"></label></td>
                         </tr>
+                        <tr>
+                            <td>Aluno 5</td>
+                            <td><label><input type="checkbox" name="email" value="aluno5_71@example.com"></label></td>
+                            <td>Responsável 5.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.1_71@example.com"></label></td>
+                            <td>Responsável 5.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel5.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 6</td>
+                            <td><label><input type="checkbox" name="email" value="aluno6_71@example.com"></label></td>
+                            <td>Responsável 6.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.1_71@example.com"></label></td>
+                            <td>Responsável 6.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel6.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 7</td>
+                            <td><label><input type="checkbox" name="email" value="aluno7_71@example.com"></label></td>
+                            <td>Responsável 7.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.1_71@example.com"></label></td>
+                            <td>Responsável 7.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel7.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 8</td>
+                            <td><label><input type="checkbox" name="email" value="aluno8_71@example.com"></label></td>
+                            <td>Responsável 8.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.1_71@example.com"></label></td>
+                            <td>Responsável 8.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel8.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 9</td>
+                            <td><label><input type="checkbox" name="email" value="aluno9_71@example.com"></label></td>
+                            <td>Responsável 9.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.1_71@example.com"></label></td>
+                            <td>Responsável 9.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel9.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 10</td>
+                            <td><label><input type="checkbox" name="email" value="aluno10_71@example.com"></label></td>
+                            <td>Responsável 10.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.1_71@example.com"></label></td>
+                            <td>Responsável 10.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel10.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 11</td>
+                            <td><label><input type="checkbox" name="email" value="aluno11_71@example.com"></label></td>
+                            <td>Responsável 11.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.1_71@example.com"></label></td>
+                            <td>Responsável 11.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel11.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 12</td>
+                            <td><label><input type="checkbox" name="email" value="aluno12_71@example.com"></label></td>
+                            <td>Responsável 12.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.1_71@example.com"></label></td>
+                            <td>Responsável 12.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel12.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 13</td>
+                            <td><label><input type="checkbox" name="email" value="aluno13_71@example.com"></label></td>
+                            <td>Responsável 13.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.1_71@example.com"></label></td>
+                            <td>Responsável 13.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel13.2_71@example.com"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Aluno 14</td>
+                            <td><label><input type="checkbox" name="email" value="aluno14_71@example.com"></label></td>
+                            <td>Responsável 14.1</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.1_71@example.com"></label></td>
+                            <td>Responsável 14.2</td>
+                            <td><label><input type="checkbox" name="email" value="responsavel14.2_71@example.com"></label></td>
+                        </tr>
+                        
                     </tbody>
                 </table>
             </div> <!-- Fim do contêiner -->

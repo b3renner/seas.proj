@@ -228,9 +228,43 @@ h3 {
     font-size: large;
 }
 
-table {
+  table{
+    width: 50%;
     margin: auto;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); 
+    background-color: rgb(254, 254, 255);
+    border-collapse: collapse;
+  }
+
+  .table-container {
+    max-height: 288px;
+    overflow-y: hidden;
+    transition: overflow 0.3s ease-in-out;
+    position: relative;
+    display: inline-block;
+    max-width: 52%; 
+    margin: auto;
+}
+
+.table-container:hover {
+    overflow-y: auto;
+}
+
+.table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 th, td {

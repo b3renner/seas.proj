@@ -83,3 +83,73 @@ function todosResponsaveis() {
         checkbox.checked = isResponsavel;
     });
 }
+
+function alternarCampoBusca(event) {
+    event.preventDefault(); 
+    
+    let input = document.getElementById("searchInput");
+    let botaoBuscar = document.getElementById("botaoBuscar");
+    let resultadoContador = document.getElementById("resultadoContador");
+
+    if (input) {
+        input.remove();
+        botaoBuscar.remove();
+        resultadoContador.style.display = "none";
+    } else {
+        let container = document.querySelector(".button-container");
+        
+        input = document.createElement("input");
+        input.type = "text";
+        input.id = "searchInput";
+        input.placeholder = "Digite sua busca...";
+        input.style.marginLeft = "10px";
+        
+        botaoBuscar = document.createElement("button");
+        botaoBuscar.textContent = "🔍";
+        botaoBuscar.id = "botaoBuscar";
+        botaoBuscar.onclick = (e) => buscar(e);
+        botaoBuscar.style.marginLeft = "5px";
+        
+        container.appendChild(input);
+        container.appendChild(botaoBuscar);
+        resultadoContador.style.display = "inline";
+    }
+}
+
+function buscar(event) {
+    event.preventDefault(); 
+    
+    let termo = document.getElementById("searchInput").value.toLowerCase();
+    let elementos = document.querySelectorAll("table td, table th");
+    let contador = 0;
+    let primeiroElemento = null;
+    let resultadoContador = document.getElementById("resultadoContador");
+
+    elementos.forEach(el => {
+        let texto = el.textContent.toLowerCase();
+
+        if (termo && texto.includes(termo)) {
+            el.classList.add("destaque");
+            el.classList.remove("oculto");
+            contador++;
+
+            if (!primeiroElemento) {
+                primeiroElemento = el;
+            }
+        } else {
+            el.classList.remove("destaque");
+        }
+    });
+
+    let resultadoTexto = contador > 0 
+        ? `🔍 ${contador} resultado(s) encontrado(s).` 
+        : "❌ Nenhum resultado encontrado.";
+    resultadoContador.textContent = resultadoTexto;
+    resultadoContador.style.display = "inline";
+
+    if (primeiroElemento) {
+        setTimeout(() => {
+            primeiroElemento.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 300);
+    }
+}

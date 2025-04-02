@@ -336,6 +336,13 @@ th, td {
 
 .button-container {
     padding-left: 2.5%;
+    margin-bottom: 1%;
+}
+
+.pesquisar-button {
+    padding-left: 0.5%;
+    margin-bottom: 4%;
+    width: 100%;
 }
 
 .verdezao {
@@ -551,6 +558,17 @@ background-color: #34a85a;
         height: 60px; 
     }
 
+    .pesquisar-button {
+        background-color: #176431;
+        width: 73%;
+        border-radius: 7px;
+        margin: auto;
+        word-wrap: break-word;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10%;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -648,5 +666,15 @@ background-color: #34a85a;
         overflow-x: auto; 
         width: 87%; 
         margin: auto;
+    }
+
+    .pesquisar-button {
+        padding-left: 1%;
+        background-color: #176431;
+        width: 99%;
+        border-radius: 0px;
+        word-wrap: break-word;
+        display: flex;
+        justify-content: center;
     }
 }

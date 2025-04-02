@@ -1,4 +1,3 @@
-
 function enviarEmail() {
     const checkboxes = document.querySelectorAll('input[name="email"]:checked');
     const emails = Array.from(checkboxes).map(checkbox => checkbox.value);
@@ -96,23 +95,42 @@ function alternarCampoBusca(event) {
         botaoBuscar.remove();
         resultadoContador.style.display = "none";
     } else {
-        let container = document.querySelector(".button-container");
+        let container = document.querySelector(".pesquisar-button");
         
         input = document.createElement("input");
         input.type = "text";
         input.id = "searchInput";
         input.placeholder = "Digite sua busca...";
         input.style.marginLeft = "10px";
+        input.style.height = "18px";
+        input.style.width = "150px";
+        input.style.border = "1px solid #ccc";
+        input.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.2)";
+        input.style.borderRadius = "5px";
+        input.style.padding = "7.5px";
+        input.style.marginTop = "15px";
+        input.style.marginBotton = "15px";
         
         botaoBuscar = document.createElement("button");
-        botaoBuscar.textContent = "🔍";
+        botaoBuscar.textContent = "🔍︎";
+        botaoBuscar.style.fontSize = "1em";
+        botaoBuscar.style.border = "1px solid #ccc";
+        botaoBuscar.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.2)";
+        botaoBuscar.style.borderRadius = "5px";
         botaoBuscar.id = "botaoBuscar";
         botaoBuscar.onclick = (e) => buscar(e);
         botaoBuscar.style.marginLeft = "5px";
+        botaoBuscar.style.cursor = "pointer";
+        botaoBuscar.style.height = "34px";
+        botaoBuscar.style.marginTop = "14.5px";
+        botaoBuscar.style.paddingBottom = "8px";
+        botaoBuscar.style.paddingTop = "3.9px";
         
         container.appendChild(input);
         container.appendChild(botaoBuscar);
         resultadoContador.style.display = "inline";
+        resultadoContador.style.fontFamily = "'Nunito', sans-serif";
+        resultadoContador.style.fontSize = "0.8em";
     }
 }
 
@@ -141,11 +159,16 @@ function buscar(event) {
         }
     });
 
-    let resultadoTexto = contador > 0 
-        ? `🔍 ${contador} resultado(s) encontrado(s).` 
-        : "❌ Nenhum resultado encontrado.";
+    let resultadoTexto = (window.innerWidth < 768) 
+        ? (contador > 0 ? `🔍︎ ${contador}` : "✖") 
+        : (contador > 0 ? `🔍︎ ${contador} resultado(s) encontrado(s).` : "✖ Nenhum resultado encontrado.");
+
     resultadoContador.textContent = resultadoTexto;
     resultadoContador.style.display = "inline";
+    resultadoContador.style.marginTop = "20px";
+    resultadoContador.style.marginLeft = "10px";
+    resultadoContador.style.marginRight = "10px";
+    resultadoContador.style.fontSize = "0.87em";
 
     if (primeiroElemento) {
         setTimeout(() => {

@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+}
 
 body {
     margin: 0;
@@ -272,6 +276,11 @@ th, td {
     padding: 8px;
     text-align: left; 
 }
+
+.tudo {
+    margin-top: -170px;
+}
+
 .turma {
     text-align: center;
     margin: auto;
@@ -569,6 +578,10 @@ background-color: #34a85a;
         margin-bottom: 10%;
     }
 
+    .tudo {
+        margin: auto;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -676,5 +689,9 @@ background-color: #34a85a;
         word-wrap: break-word;
         display: flex;
         justify-content: center;
+    }
+
+    .tudo {
+        margin: auto;
     }
 }

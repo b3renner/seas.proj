@@ -2139,7 +2139,43 @@
         </section>
 
     </form>
+    <form class="form-aluno" id="alunoform">
+        <h1>Adicionar/Editar Aluno:</h1>
+        <label>Turma:</label>
+        <select id="turma">
+            <option value="61">61</option>
+            <option value="71">71</option>
+            <option value="81">81</option>
+            <option value="82">82</option>
+            <option value="91">91</option>
+            <option value="111">111</option>
+            <option value="121">121</option>
+            <option value="131">131</option>
+        </select>
 
+        <label>Matrícula:</label>
+        <input type="text" id="matricula" required pattern="\d+" title="A matrícula deve conter apenas números">
+        
+        <label>Nome do Aluno:</label>
+        <input type="text" id="nomeAluno" required>
+    
+        <label>Email do Aluno:</label>
+        <input type="email" id="emailAluno" required>
+    
+        <label>Nome do Responsável 1:</label>
+        <input type="text" id="responsavel1" required>
+    
+        <label>Email do Responsável 1:</label>
+        <input type="email" id="emailResponsavel1" required>
+    
+        <label>Nome do Responsável 2:</label>
+        <input type="text" id="responsavel2">
+    
+        <label>Email do Responsável 2:</label>
+        <input type="email" id="emailResponsavel2">
+    
+        <button id="add-aluno" type="submit">Adicionar Aluno</button>
+    </form>
     <footer>
         &copy; 2025 Colégio Sinodal Prado Gravataí. Todos os direitos reservados.
     </footer>

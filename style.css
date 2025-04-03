@@ -474,6 +474,79 @@ background-color: #5bc175;
 background-color: #34a85a; 
 }
 
+.form-aluno {
+    padding: 2%;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.form-aluno h3 {
+    text-align: center;
+    color: #176431;
+}
+
+.form-aluno label {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.form-aluno input,
+.form-aluno textarea,
+.form-aluno select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.form-aluno select {
+    text-align: center;
+}
+
+.form-aluno select:focus {
+    border-radius: 8px;
+    outline: none; 
+}
+
+.form-aluno textarea {
+    resize: none;
+    height: 120px;
+}
+
+.form-aluno button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.form-aluno #add-aluno {
+    background-color: #176431;
+}
+
+.form-aluno #add-aluno:hover {
+    background-color: #429860;
+}
+
+@media (max-width: 768px) {
+    .form-aluno {
+        width: 80%;
+    }
+}
+
 @media (max-width: 768px) {
     .interface {
         justify-content: space-between; 

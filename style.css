@@ -480,6 +480,9 @@ background-color: #34a85a;
     width: 50%;
     margin: auto;
     margin-bottom: 5%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .form-aluno h3 {
@@ -498,14 +501,23 @@ background-color: #34a85a;
 .form-aluno input,
 .form-aluno textarea,
 .form-aluno select {
-    width: 100%;
+    width: 35%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-family: "Nunito", sans-serif;
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 5%;
     box-sizing: border-box;
+    margin-left: 10%;
+}
+
+.form-aluno input {
+    width: 80%;
+}
+
+.form-aluno select {
+    margin-left: 32%;
 }
 
 .form-aluno select {
@@ -532,6 +544,7 @@ background-color: #34a85a;
     font-size: 18px;
     color: #ffffff;
     margin-top: 10px;
+    width: 100%;
 }
 
 .form-aluno #add-aluno {
@@ -654,6 +667,11 @@ background-color: #34a85a;
 
     .tudo {
         margin: auto;
+    }
+
+    .form-aluno select {
+        width: 30%;
+        margin-left: 34.5%;
     }
 
 }

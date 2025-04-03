@@ -176,3 +176,208 @@ function buscar(event) {
         }, 300);
     }
 }
+
+// Banco de Dados IndexedDB 
+
+    const request = indexedDB.open("EscolaBD", 2);
+
+        request.onupgradeneeded = function (event) {
+            let db = event.target.result;
+
+            if(!db.objectStoreNames.contains("alunos")) {
+                let store = db.createObjectStore("alunos", { keyPath: "matricula"});
+                store.createIndex("turma", "turma", { unique: false });
+            }
+        };
+
+        request.onerror = function (event) {
+            console.error("Erro ao abrir o banco de dados:", event.target.error);
+        }
+
+        request.onsuccess = function () {
+            console.log("Banco de dados aberto com sucesso");
+            carregarAlunos();
+        };
+
+        // Adicionar Alunos e Salvar no BD
+
+        document.getElementById("alunoform").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let aluno = {
+                matricula: String(document.getElementById("matricula").value), 
+                turma: document.getElementById("turma").value,
+                nome: document.getElementById("nomeAluno").value,
+                email: document.getElementById("emailAluno").value,
+                responsavel1: document.getElementById("responsavel1").value,
+                emailResponsavel1: document.getElementById("emailResponsavel1").value,
+                responsavel2: document.getElementById("responsavel2").value || "N/A",
+                emailResponsavel2: document.getElementById("emailResponsavel2").value || "N/A",
+            };
+
+            let request = indexedDB.open("EscolaBD", 2);
+
+            request.onsuccess = function (event) {
+                let db = event.target.result;
+                let transaction = db.transaction(["alunos"], "readwrite");
+                let store = transaction.objectStore("alunos");
+            
+                let addrequest = store.add(aluno);
+                addrequest.onsuccess = function () {
+                    alert("Aluno adicionado com sucesso!");
+                    document.getElementById("alunoform").reset();
+                };
+            
+                transaction.oncomplete = function () {
+                    carregarAlunos();
+                };
+            };            
+        });
+
+        // Carregar Alunos nas tabelas
+
+        function carregarAlunos() {
+            let request = indexedDB.open("EscolaBD", 2);
+
+            request.onsuccess = function (event) {
+                let db = event.target.result;
+                let transaction = db.transaction(["alunos"], "readonly");
+                let store = transaction.objectStore("alunos");
+
+                document.querySelectorAll("tbody").forEach(tbody => tbody.innerHTML = "");
+
+                store.openCursor().onsuccess = function (event) {
+                    let cursor = event.target.result;
+                    if (cursor) {
+                        let aluno = cursor.value;
+                        let tabela = document.querySelector(`#turma${aluno.turma} tbody`);
+                if (!tabela) {
+                    alert(`Tabela para turma ${aluno.turma} não encontrada!`);
+                    return;
+                }
+
+                        let linha = document.createElement("tr");
+                        linha.innerHTML = `
+                            <td>${aluno.nome}</td>
+            <td>
+                <label>
+                    <input type="checkbox" name="email" value="${aluno.email}"></label>
+            </td>
+            <td>${aluno.responsavel1}</td>
+            <td>
+                <label>
+                    <input type="checkbox" name="email" value="${aluno.emailResponsavel1}"></label>
+            </td>
+            <td>${aluno.responsavel2}</td>
+            <td>
+                <label>
+                    <input type="checkbox" name="email" value="${aluno.emailResponsavel2}"></label>
+            </td>
+            <td>
+                <button onclick="editarAluno(${cursor.key})">Editar</button>
+                <button onclick="removerAluno(String(${cursor.key}))">Remover</button>
+
+            </td>
+        `;
+
+                        tabela.appendChild(linha);
+                        cursor.continue();
+                    }
+                };
+            };
+        };
+
+        // Editar Alunos e Remover Alunos
+
+        function editarAluno(matricula) {
+            let request = indexedDB.open("EscolaBD", 2);
+        
+            request.onsuccess = function (event) {
+                let db = event.target.result;
+                let transaction = db.transaction(["alunos"], "readwrite");
+                let store = transaction.objectStore("alunos");
+        
+                let getRequest = store.get(matricula);
+                getRequest.onsuccess = function () {
+                    let aluno = getRequest.result;
+        
+                    document.getElementById("matricula").value = aluno.matricula;
+                    document.getElementById("turma").value = aluno.turma;
+                    document.getElementById("nomeAluno").value = aluno.nome;
+                    document.getElementById("emailAluno").value = aluno.email;
+                    document.getElementById("responsavel1").value = aluno.responsavel1;
+                    document.getElementById("emailResponsavel1").value = aluno.emailResponsavel1;
+                    document.getElementById("responsavel2").value = aluno.responsavel2;
+                    document.getElementById("emailResponsavel2").value = aluno.emailResponsavel2;
+        
+                    let form = document.getElementById("alunoform");
+                    form.onsubmit = function (event) {
+                        event.preventDefault();
+        
+                        aluno.turma = document.getElementById("turma").value;
+                        aluno.nome = document.getElementById("nomeAluno").value;
+                        aluno.email = document.getElementById("emailAluno").value;
+                        aluno.responsavel1 = document.getElementById("responsavel1").value;
+                        aluno.emailResponsavel1 = document.getElementById("emailResponsavel1").value;
+                        aluno.responsavel2 = document.getElementById("responsavel2").value;
+                        aluno.emailResponsavel2 = document.getElementById("emailResponsavel2").value;
+        
+                        let updateRequest = store.put(aluno);
+                        updateRequest.onsuccess = function () {
+                            alert("Aluno atualizado com sucesso!");
+                            form.reset();
+                            form.onsubmit = adicionarAluno;
+                            carregarAlunos();
+                        };
+                    };
+                };
+            };
+        }
+    
+        function removerAluno(matricula) {
+            console.log(`Tentando remover aluno com matrícula: ${matricula}`); // Log para verificar a matrícula
+            let request = indexedDB.open("EscolaBD", 2);
+            
+            request.onsuccess = function (event) {
+                let db = event.target.result;
+                let transaction = db.transaction(["alunos"], "readwrite");
+                let store = transaction.objectStore("alunos");
+            
+                let getRequest = store.get(String(matricula));
+                
+                getRequest.onsuccess = function() {
+                    if (getRequest.result) {
+                        console.log(`Aluno encontrado: ${JSON.stringify(getRequest.result)}`); // Log para verificar o aluno encontrado
+                        let deleteRequest = store.delete(String(matricula));
+            
+                        deleteRequest.onsuccess = function () {
+                            console.log(`Aluno com matrícula ${matricula} removido do banco de dados.`);
+                            alert("Aluno removido!");
+            
+                            transaction.oncomplete = function () {
+                                console.log("Transação concluída. Atualizando tabela...");
+                                carregarAlunos(); 
+                            };
+                        };
+            
+                        deleteRequest.onerror = function (event) {
+                            console.error("Erro ao remover aluno:", event.target.error);
+                            alert("Erro ao remover aluno.");
+                        };
+                    } else {
+                        console.log(`Aluno com matrícula ${matricula} não encontrado.`);
+                        alert("Aluno não encontrado.");
+                    }
+                };
+            
+                getRequest.onerror = function(event) {
+                    console.error("Erro ao buscar aluno:", event.target.error);
+                    alert("Erro ao buscar aluno.");
+                };
+            };
+            
+            request.onerror = function (event) {
+                console.error("Erro ao abrir o banco de dados:", event.target.error);
+                alert("Erro ao acessar o banco de dados.");
+            };
+        }

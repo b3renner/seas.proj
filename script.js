@@ -225,7 +225,7 @@ function buscar(event) {
 });
 
 // Função para adicionar/atualizar novo aluno 
-function adicionarAluno(aluno) {
+function adicionarAluno(aluno, mostrarAluno = true) {
     const request = indexedDB.open("EscolaBD", 2);
 
     request.onsuccess = function (event) {
@@ -235,7 +235,9 @@ function adicionarAluno(aluno) {
 
         const addRequest = store.add(aluno);
         addRequest.onsuccess = function () {
+            if(mostrarAluno) {
             alert("Aluno adicionado com sucesso!");
+            }
             document.getElementById("alunoform").reset();
             carregarAlunos();
         };
@@ -334,7 +336,7 @@ function atualizarAluno(aluno) {
 
         // Editar Alunos e Remover Alunos
 
-        function editarAluno(matricula) {
+      function editarAluno(matricula) {
             const request = indexedDB.open("EscolaBD", 2);
         
             request.onsuccess = function (event) {
@@ -428,3 +430,95 @@ function atualizarAluno(aluno) {
             }
           }
           
+          // Importar Planilha
+
+          function importarPlanilha() {
+            const input = document.getElementById('arquivo');
+            const arquivo = input.files[0];
+        
+            if (!arquivo) {
+                alert("Selecione um arquivo primeiro.");
+                return;
+            }
+        
+            const reader = new FileReader();
+        
+            reader.onload = function (e) {
+                const dados = new Uint8Array(e.target.result);
+                const workbook = XLSX.read(dados, { type: 'array' });
+        
+                const primeiraPlanilha = workbook.SheetNames[0];
+                const planilha = workbook.Sheets[primeiraPlanilha];
+        
+                const dadosJson = XLSX.utils.sheet_to_json(planilha, { header: 1 }); 
+        
+                console.log("Dados importados:", dadosJson);
+        
+                const request = indexedDB.open("EscolaBD", 2);
+        
+                request.onsuccess = function (event) {
+                    const db = event.target.result;
+                    const transaction = db.transaction(["alunos"], "readwrite");
+                    const store = transaction.objectStore("alunos");
+        
+                    let turmaAtual = "";
+                    let pularProxima = false;
+        
+                    for (let i = 0; i < dadosJson.length; i++) {
+                        const linha = dadosJson[i];
+        
+                        if (!linha || linha.length === 0 || linha.every(cell => cell === undefined || cell === "")) {
+                            continue;
+                        }
+        
+                        if (typeof linha[0] === 'string' && linha[0].startsWith("Turma:")) {
+                            turmaAtual = linha[0].replace("Turma:", "").trim();
+                            pularProxima = true;
+                            continue;
+                        }
+        
+                        if (pularProxima) {
+                            pularProxima = false;
+                            continue;
+                        }
+        
+                        if (linha.length >= 8 && turmaAtual) {
+                            let indexShift = (linha[0] === undefined || linha[0] === "") ? 1 : 0;
+                        
+                            const aluno = {
+                                matricula: String(linha[0 + indexShift]),
+                                nome: linha[1 + indexShift],
+                                turma: turmaAtual,
+                                responsavel1: linha[3 + indexShift],
+                                emailResponsavel1: linha[6 + indexShift],
+                                responsavel2: linha[4 + indexShift],
+                                emailResponsavel2: linha[7 + indexShift],
+                                email: linha[5 + indexShift]
+                            };
+                        
+                            console.log("Importando aluno:", aluno);
+                            store.add(aluno);
+                        }
+                        
+                    }
+        
+                    transaction.oncomplete = function () {
+                        alert("Importação concluída!");
+                        carregarAlunos();
+                    };
+        
+                    transaction.onerror = function () {
+                        alert("Erro durante a importação. Verifique se há matrículas duplicadas.");
+                    };
+                };
+        
+                request.onerror = function (event) {
+                    console.error("Erro ao abrir o banco de dados:", event.target.error);
+                    alert("Erro ao acessar o banco de dados.");
+                };
+            };
+        
+            reader.readAsArrayBuffer(arquivo);
+        }
+        
+        

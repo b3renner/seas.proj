@@ -320,7 +320,7 @@ function atualizarAluno(aluno) {
             </td>
             <td>
                 <button type="button" onclick="editarAluno('${aluno.matricula}')">Editar</button>
-                <button type="button" onclick="removerAluno('${aluno.matricula}')">Remover</button>
+                <button type="button" onclick="confirmarRemocaoAluno('${aluno.matricula}')">Remover</button>
 
             </td>
         `;
@@ -420,3 +420,11 @@ function atualizarAluno(aluno) {
                 alert("Erro ao acessar o banco de dados.");
             };
         }
+
+        function confirmarRemocaoAluno(matricula) {
+            const confirmacao = confirm("Tem certeza que deseja remover este aluno?");
+            if (confirmacao) {
+              removerAluno(matricula);
+            }
+          }
+          

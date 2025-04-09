@@ -268,6 +268,17 @@ document.getElementById("alunoform").addEventListener("submit", function (event)
     }
 });
 
+function limparFormulario() {
+    if (confirm("Deseja realmente limpar o formulário?")) {
+        document.getElementById("alunoform").reset();
+
+        modoEdicao = false;
+        matriculaEditando = null;
+
+        console.log("Formulário limpo e modo de edição desativado.");
+    }
+}
+
 // Função para adicionar/atualizar novo aluno
 function adicionarAluno(aluno, mostrarAluno = true) {
     const request = indexedDB.open("EscolaBD", 2);

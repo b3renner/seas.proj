@@ -230,6 +230,28 @@ header nav ul li {
     }
 }
 
+@keyframes slideIn2 {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn3 {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 #fundo2 {
     width: 15%;
     height: 100%;
@@ -290,14 +312,14 @@ table {
     display: inline-block;
     max-width: 52%;
     margin: auto;
-    opacity: 0; /* Inicialmente oculto */
-    transform: translateY(20px); /* Inicialmente deslocado */
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transição para a tabela */
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
 }
 
 .table-container.visible {
-    opacity: 1; /* Visível */
-    transform: translateY(0); /* Retorna à posição original */
+    opacity: 1; 
+    transform: translateY(0); 
 }
 
 .table-container:hover {
@@ -342,8 +364,8 @@ th, td {
     text-align: center;
     margin: auto;
     padding-top: 2%;
-    opacity: 1; /* Visível sem transição */
-    transform: none; /* Sem deslocamento */
+    opacity: 1; 
+    transform: none; 
 }
 
 .s1 > div {
@@ -416,6 +438,7 @@ footer {
     transition: background-color 0.3s ease;
     margin-right: 40px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    animation: slideIn2 0.5s ease-out forwards;
 }
 
 .verdezao img {
@@ -449,6 +472,7 @@ footer {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
     margin-top: 2%;
     margin-bottom: 2%;
+    animation: slideIn3 0.5s ease-out forwards;
 }
 
 .verdinho img {

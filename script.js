@@ -221,6 +221,40 @@ function buscar(event) {
     }
 }
 
+function aplicarModelo() {
+    const modelo = document.getElementById("modelos").value;
+    const assunto = document.getElementById("assunto");
+    const corpo = document.getElementById("corpo");
+
+    let assuntoTexto = "";
+    let corpoTexto = "";
+
+    switch (modelo) {
+        case "reuniao":
+            assuntoTexto = "Reunião com responsáveis";
+            corpoTexto = "Convidamos os responsáveis para uma reunião que acontecerá no dia [DATA] às [HORÁRIO], na escola.\n\nContamos com a presença de todos!\n\nAtenciosamente,\nCoordenação";
+            break;
+
+        case "falta":
+            assuntoTexto = "Aviso de faltas";
+            corpoTexto = "Informamos que o(a) aluno(a) esteve ausente nos últimos dias.\nPedimos que justifiquem a ausência ou entrem em contato com a escola, se necessário.\n\nAtenciosamente,\nCoordenação";
+            break;
+
+        case "evento":
+            assuntoTexto = "Convite para evento escolar";
+            corpoTexto = "A escola convida você e sua família para o evento [NOME DO EVENTO], que acontecerá no dia [DATA] às [HORÁRIO].\nSerá um momento especial e contamos com a sua presença!\n\nAbraços,\nEquipe Escolar";
+            break;
+
+        default:
+            assuntoTexto = "";
+            corpoTexto = "";
+            break;
+    }
+
+    assunto.value = assuntoTexto;
+    corpo.value = corpoTexto;
+}
+
 // Banco de Dados IndexedDB
 
 const request = indexedDB.open("EscolaBD", 2);

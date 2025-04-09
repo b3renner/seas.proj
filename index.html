@@ -336,6 +336,17 @@
             <div id="fundo2">
                 <p> E-mail </p><br>
             </div>
+            <div>
+                <label for="modelos" class="h1">Escolha um modelo:</label><br>
+                    <select id="modelos" onchange="aplicarModelo()">
+                     <option value="">-- Selecione um modelo --</option>
+                     <option value="reuniao">Convite para Reunião</option>
+                     <option value="falta">Aviso de Faltas</option>
+                     <option value="evento">Convite para Evento</option>
+                    </select>
+                    <br><br>
+            </div>
+        <div>
             <label class="h1" for="assunto">Assunto:</label><br>
             <textarea placeholder="Digite o assunto" id="assunto" required></textarea><br><br><br>
         </div>

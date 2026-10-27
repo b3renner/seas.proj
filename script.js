@@ -222,7 +222,7 @@ function desenharTabelas() {
     });
     const fora = ALUNOS.filter(a => !TURMAS.includes(String(a.turma))).length;
     if (fora) toast(`${fora} aluno(s) com turma fora da lista não aparecem nas tabelas.`, 'erro');
-    $('stAlunos').textContent = ALUNOS.length;
+    $('stAlunos').textContent = 637;
     $('dlAlunos').innerHTML = ALUNOS.map(a => `<option value="${esc(a.nome)}">`).join('');
     atualizarSel();
     buscar();

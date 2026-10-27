@@ -1,413 +1,182 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="Website Icon" href="mail.png">
+    <link rel="icon" href="mail.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <title>S.E.A.S</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
-    
-<header>
-    <div class="interface">
-        <div class="quadrado-esquerdo">
-            <img src="logo.png" alt="Logo" onclick="window.location.href='#fundo'"/>
-        </div>
-        <div class="menu-desktop">
-            <nav>
-                <ul class="corheader">
-                    <li><a href="#turma61"> 61</a></li>
-                    <li><a href="#turma71">71</a></li>
-                    <li><a href="#turma81">81</a></li>
-                    <li><a href="#turma82">82</a></li>
-                    <li><a href="#turma91">91</a></li>
-                    <li><a href="#turma111">111</a></li>
-                    <li><a href="#turma121">121</a></li>
-                    <li><a href="#turma131">131</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="quadrado-direito">
-            <nav>
-                <ul>
-                    <li><a href="#fundo2">Ações</a></li>
-                </ul>
-            </nav>
-            <div class="submenu" style="display: none;">
-                <ul>
-                    <li><a href="#fundo2">E-mails</a></li>
-                    <li><a href="#limpar">Cadastro</a></li>
-                </ul>
-            </div>
-        </div>
-    <button id="toggle-header" class="toggle-button">☰</button> 
-</header>
+<body data-v="turmas">
 
-<body>
+<aside class="side" id="side">
+    <div class="brand"><img src="logo.png" alt="Colégio Sinodal"></div>
+    <p class="sys">Sistema de E-mails Automáticos do Sinodal</p>
+    <nav class="nav">
+        <a href="#turmas" data-v="turmas" class="on">Turmas</a>
+        <a href="#email" data-v="email">E-mail</a>
+        <a href="#notas" data-v="notas">Notas</a>
+        <a href="#armarios" data-v="armarios">Armários</a>
+        <a href="#cadastro" data-v="cadastro">Cadastro</a>
+    </nav>
+    <small>Colégio Sinodal Prado Gravataí</small>
+</aside>
+<button id="toggle-header" class="toggle-button" type="button" aria-label="Abrir menu">Menu</button>
 
-    <section id="fundo">
+<main>
+    <section class="hero">
         <div>
             <h1>S.E.A.S</h1>
-            <h3> Sistema de E-mails Automáticos do Sinodal </h3>
+            <p>Sistema de E-mails Automáticos do Sinodal</p>
         </div>
+        <dl class="stats">
+            <div><dt>Alunos cadastrados</dt><dd id="stAlunos">0</dd></div>
+            <div><dt>E-mails selecionados</dt><dd id="stSel">0</dd></div>
+        </dl>
     </section>
-    <div id="turma61"></div>
 
-    <form onsubmit="event.preventDefault(); enviarEmail();">
+    <div class="wrap">
 
-        <div class="button-container">
-            <button class="verdezao clipboard" type="button" onclick="todosAlunos()">
-                <img src="todosalunos.png" alt="Todos Alunos" />
-            </button>
-            <button class="verdezao clipboard" type="button" onclick="selecionartodos()">
-                <img src="clipboard.png" alt="Selecionar Todos" />
-            </button>
-            <button class="verdezao clipboard" type="button" onclick="todosResponsaveis()">
-                <img src="todospais.png" alt="Todos Responsáveis" />
-            </button>
+        <!-- TURMAS -->
+        <div class="view on" id="v-turmas">
+            <div class="bar">
+                <div class="grp">
+                    <button class="btn" type="button" onclick="todosAlunos()"><img src="todosalunos.png" alt="">Todos os alunos</button>
+                    <button class="btn" type="button" onclick="selecionartodos()"><img src="clipboard.png" alt="">Selecionar tudo</button>
+                    <button class="btn" type="button" onclick="todosResponsaveis()"><img src="todospais.png" alt="">Todos os responsáveis</button>
+                </div>
+                <label class="search">
+                    <img src="lupa.png" alt="Buscar">
+                    <input id="searchInput" type="search" placeholder="Buscar aluno, responsável ou e-mail" oninput="buscar()" onkeydown="if(event.key==='Enter'){event.preventDefault();buscar(true)}">
+                    <span id="resultadoContador"></span>
+                </label>
+            </div>
+            <div class="chips" id="chips"></div>
+            <div id="turmas"></div>
         </div>
 
-        <div class="pesquisar-button">
-            <button id="searchButton" class="verdinho clipboard" type="button" onclick="alternarCampoBusca(event)">
-                <img src="lupa.png" alt="lupa" />
-            </button>
-            <span id="resultadoContador" style="display: none;"></span>
+        <!-- E-MAIL -->
+        <div class="view" id="v-email">
+            <div class="vhead"><h2>Escrever e-mail</h2><p>Os destinatários marcados nas turmas entram em cópia oculta, para que ninguém veja o endereço dos outros.</p></div>
+            <form class="card form-mail" onsubmit="event.preventDefault(); enviarEmail();">
+                <div class="dest" id="destInfo">Nenhum destinatário selecionado. Escolha na aba Turmas.</div>
+                <label for="modelos">Modelo</label>
+                <select id="modelos" onchange="aplicarModelo()">
+                    <option value="">Em branco</option>
+                    <option value="reuniao">Convite para reunião</option>
+                    <option value="falta">Aviso de faltas</option>
+                    <option value="evento">Convite para evento</option>
+                </select>
+                <label for="assunto">Assunto</label>
+                <input id="assunto" type="text" placeholder="Digite o assunto" required>
+                <label for="corpo">Mensagem</label>
+                <textarea id="corpo" placeholder="Digite a sua mensagem" rows="10" required></textarea>
+                <div class="grp end">
+                    <button id="limpar" class="btn ghost" type="button" onclick="clearForm()">Limpar formulário</button>
+                    <button id="enviar" class="btn" type="submit">Enviar e-mail</button>
+                </div>
+            </form>
         </div>
-        
-        <section class="tudo">
-            <!-- 61-->
-            <section class="turma" id="turma61">
-                <h2> Turma 61 </h2>
-                <button class="verdinho" type="button" onclick="selecionarAlunos('turma61')">
-                    <img src="aluno.png" alt="Todos Alunos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="toggleSelectAll('turma61')">
-                    <img src="approve.png" alt="Todos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma61')">
-                    <img src="pais.png" alt="Todos Responsáveis da Turma" />
-                </button>
-                <br><br>
-                <div class="table-container"> 
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>Nome Aluno</th>
-                                <th>E-mail Aluno</th>
-                                <th>Nome Responsável 1</th>
-                                <th>E-mail Responsável 1</th>
-                                <th>Nome Responsável 2</th>
-                                <th>E-mail Responsável 2</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div> 
-                <div id="turma71"></div>
-            </section>
 
-            <!-- 71-->
-            <section class="turma" id="turma71">
-                <h2> Turma 71 </h2>
-                <button class="verdinho" type="button" onclick="selecionarAlunos('turma71')">
-                    <img src="aluno.png" alt="Todos Alunos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="toggleSelectAll('turma71')">
-                    <img src="approve.png" alt="Todos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma71')">
-                    <img src="pais.png" alt="Todos Responsáveis da Turma" />
-                </button>
-                <br><br>
-                <div class="table-container"> 
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>Nome Aluno</th>
-                                <th>E-mail Aluno</th>
-                                <th>Nome Responsável 1</th>
-                                <th>E-mail Responsável 1</th>
-                                <th>Nome Responsável 2</th>
-                                <th>E-mail Responsável 2</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
+        <!-- NOTAS -->
+        <div class="view" id="v-notas">
+            <div class="vhead"><h2>Lançamento de notas</h2><p>Provas valem 40% cada e o trabalho vale 20%. A média e a situação são calculadas enquanto você digita.</p></div>
+            <div class="card">
+                <div class="bar nb">
+                    <div class="f"><label for="nTurma">Turma</label><select id="nTurma"></select></div>
+                    <div class="f"><label for="nDisc">Disciplina</label><select id="nDisc"></select></div>
+                    <div class="f"><label>Bimestre</label>
+                        <div class="seg" id="nBim"><button type="button" data-b="1" class="on">1º</button><button type="button" data-b="2">2º</button><button type="button" data-b="3">3º</button><button type="button" data-b="4">4º</button></div>
+                    </div>
+                </div>
+                <p class="demo" id="nDemo" hidden>Esta turma ainda não tem alunos cadastrados. Os nomes abaixo são apenas de exemplo.</p>
+                <div class="sumario">
+                    <div><b id="nMedia">-</b><span>Média da turma</span></div>
+                    <div class="ok"><b id="nAprov">0</b><span>Aprovados</span></div>
+                    <div class="rec"><b id="nRec">0</b><span>Em recuperação</span></div>
+                    <div class="risco"><b id="nRisco">0</b><span>Em risco</span></div>
+                </div>
+                <div class="table-container">
+                    <table class="notas">
+                        <thead><tr><th>Aluno</th><th>Prova 1</th><th>Prova 2</th><th>Trabalho</th><th>Média</th><th>Situação</th></tr></thead>
+                        <tbody id="nBody"></tbody>
                     </table>
                 </div>
-                <div id="turma81"></div>
-            </section>
+                <div class="grp end foot"><span id="nStatus" class="muted"></span><button id="nSalvar" class="btn" type="button" onclick="salvarNotas()">Salvar notas</button></div>
+            </div>
+        </div>
 
-            <!-- 81-->
-            <section class="turma" id="turma81">
-                <h2> Turma 81 </h2>
-                <button class="verdinho" type="button" onclick="selecionarAlunos('turma81')">
-                    <img src="aluno.png" alt="Todos Alunos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="toggleSelectAll('turma81')">
-                    <img src="approve.png" alt="Todos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma81')">
-                    <img src="pais.png" alt="Todos Responsáveis da Turma" />
-                </button>
-                <br><br>
-                <div class="table-container"> 
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>Nome Aluno</th>
-                                <th>E-mail Aluno</th>
-                                <th>Nome Responsável 1</th>
-                                <th>E-mail Responsável 1</th>
-                                <th>Nome Responsável 2</th>
-                                <th>E-mail Responsável 2</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div> 
-                <div id="turma82"></div>
-            </section>
-
-            <!-- 82-->
-            <section class="turma" id="turma82">
-                <h2> Turma 82 </h2>
-                <button class="verdinho" type="button" onclick="selecionarAlunos('turma82')">
-                    <img src="aluno.png" alt="Todos Alunos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="toggleSelectAll('turma82')">
-                    <img src="approve.png" alt="Todos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma82')">
-                    <img src="pais.png" alt="Todos Responsáveis da Turma" />
-                </button>
-                <br><br>
-                <div class="table-container"> 
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>Nome Aluno</th>
-                                <th>E-mail Aluno</th>
-                                <th>Nome Responsável 1</th>
-                                <th>E-mail Responsável 1</th>
-                                <th>Nome Responsável 2</th>
-                                <th>E-mail Responsável 2</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+        <!-- ARMÁRIOS -->
+        <div class="view" id="v-armarios">
+            <div class="vhead"><h2>Armários</h2><p>Toque em um armário verde para alugar. Os armários em laranja já têm dono.</p></div>
+            <div class="arm">
+                <div class="cab">
+                    <div class="cab-top"><span>Bloco A, térreo</span><span>Corredor do Ensino Médio</span></div>
+                    <div class="cab-grid" id="cabGrid"></div>
+                    <div class="cab-base"></div>
                 </div>
-                <div id="turma91"></div>
-            </section>
-
-            <!-- 91-->
-            <section class="turma" id="turma91">
-                <h2> Turma 91 </h2>
-                <button class="verdinho" type="button" onclick="selecionarAlunos('turma91')">
-                    <img src="aluno.png" alt="Todos Alunos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="toggleSelectAll('turma91')">
-                    <img src="approve.png" alt="Todos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma91')">
-                    <img src="pais.png" alt="Todos Responsáveis da Turma" />
-                </button>
-                <br><br>
-                <div class="table-container"> 
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>Nome Aluno</th>
-                                <th>E-mail Aluno</th>
-                                <th>Nome Responsável 1</th>
-                                <th>E-mail Responsável 1</th>
-                                <th>Nome Responsável 2</th>
-                                <th>E-mail Responsável 2</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div> 
-                <div id="turma111"></div>
-            </section>
-
-            <!-- 111-->
-            <section class="turma" id="turma111">
-                <h2> Turma 111 </h2>
-                <button class="verdinho" type="button" onclick="selecionarAlunos('turma111')">
-                    <img src="aluno.png" alt="Todos Alunos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="toggleSelectAll('turma111')">
-                    <img src="approve.png" alt="Todos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma111')">
-                    <img src="pais.png" alt="Todos Responsáveis da Turma" />
-                </button>
-                <br><br>
-                <div class="table-container"> 
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>Nome Aluno</th>
-                                <th>E-mail Aluno</th>
-                                <th>Nome Responsável 1</th>
-                                <th>E-mail Responsável 1</th>
-                                <th>Nome Responsável 2</th>
-                                <th>E-mail Responsável 2</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div> 
-                <div id="turma121"></div>
-            </section>
-
-            <!-- 121-->
-            <section class="turma" id="turma121">
-                <h2> Turma 121 </h2>
-                <button class="verdinho" type="button" onclick="selecionarAlunos('turma121')">
-                    <img src="aluno.png" alt="Todos Alunos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="toggleSelectAll('turma121')">
-                    <img src="approve.png" alt="Todos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma121')">
-                    <img src="pais.png" alt="Todos Responsáveis da Turma" />
-                </button>
-                <br><br>
-                <div class="table-container"> 
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>Nome Aluno</th>
-                                <th>E-mail Aluno</th>
-                                <th>Nome Responsável 1</th>
-                                <th>E-mail Responsável 1</th>
-                                <th>Nome Responsável 2</th>
-                                <th>E-mail Responsável 2</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div> 
-                <div id="turma131"></div>
-            </section>
-
-            <!-- 131-->
-            <section class="turma" id="turma131">
-                <h2> Turma 131 </h2>
-                <button class="verdinho" type="button" onclick="selecionarAlunos('turma131')">
-                    <img src="aluno.png" alt="Todos Alunos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="toggleSelectAll('turma131')">
-                    <img src="approve.png" alt="Todos da Turma" />
-                </button>
-                <button class="verdinho" type="button" onclick="selecionarResponsaveis('turma131')">
-                    <img src="pais.png" alt="Todos Responsáveis da Turma" />
-                </button>
-                <br><br>
-                <div class="table-container"> 
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>Nome Aluno</th>
-                                <th>E-mail Aluno</th>
-                                <th>Nome Responsável 1</th>
-                                <th>E-mail Responsável 1</th>
-                                <th>Nome Responsável 2</th>
-                                <th>E-mail Responsável 2</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div> 
-            </section>
-        </section>
-        
-        <!-- email-->
-        <section class="s1">
-            <div id="fundo2">
-                <p> E-mail </p><br>
+                <aside class="card legenda">
+                    <h3>Situação</h3>
+                    <p><i class="dot free"></i>Livres <b id="cLivres">0</b></p>
+                    <p><i class="dot taken"></i>Ocupados <b id="cOcup">0</b></p>
+                    <hr>
+                    <p class="muted">Ao alugar, o armário muda de cor na hora. Um armário alugado nesta sessão pode ser liberado clicando nele de novo.</p>
+                </aside>
             </div>
-            <div>
-                <label for="modelos" class="h1">Escolha um modelo:</label><br>
-                    <select id="modelos" onchange="aplicarModelo()">
-                     <option value="">-- Selecione um modelo --</option>
-                     <option value="reuniao">Convite para Reunião</option>
-                     <option value="falta">Aviso de Faltas</option>
-                     <option value="evento">Convite para Evento</option>
-                    </select>
-                    <br><br>
-            </div>
-        <div>
-            <label class="h1" for="assunto">Assunto:</label><br>
-            <textarea placeholder="Digite o assunto" id="assunto" required></textarea><br><br><br>
-        </div>
-        <div>
-            <label class="h1" for="corpo">Corpo da Mensagem:</label><br>
-            <textarea id="corpo" placeholder="Digite a sua mensagem" rows="4" required></textarea><br><br>
-        </div>
-        <button id="enviar" type="submit">Enviar Email</button><br><br><br>
-        <button id="limpar" type="button" onclick="clearForm()">Limpar Formulário</button>
-        <br><br>
-        </section>
-    </form>
-    
-    <form class="form-aluno" id="alunoform" onsubmit="adicionarAluno()">
-        <h1>Adicionar/Editar Aluno:</h1>
-        <label>Turma:</label>
-        <select id="turma">
-            <option value="61">61</option>
-            <option value="71">71</option>
-            <option value="81">81</option>
-            <option value="82">82</option>
-            <option value="91">91</option>
-            <option value="111">111</option>
-            <option value="121">121</option>
-            <option value="131">131</option>
-        </select>
-
-        <label>Matrícula:</label>
-        <input type="text" placeholder="Digite a matrícula" id="matricula" required pattern="\d+" title="A matrícula deve conter apenas números">
-        
-        <label>Nome do Aluno:</label>
-        <input type="text" placeholder="Digite o nome do aluno" id="nomeAluno" required>
-    
-        <label>Email do Aluno:</label>
-        <input type="email" placeholder="Digite o e-mail" id="emailAluno" required>
-    
-        <label>Nome do Responsável 1:</label>
-        <input type="text" placeholder="Digite o nome do responsável" id="responsavel1" required>
-    
-        <label>Email do Responsável 1:</label>
-        <input type="email" placeholder="Digite o e-mail" id="emailResponsavel1" required>
-    
-        <label>Nome do Responsável 2:</label>
-        <input type="text" placeholder="Digite o nome do responsável" id="responsavel2">
-    
-        <label>Email do Responsável 2:</label>
-        <input type="email" placeholder="Digite o e-mail" id="emailResponsavel2">
-    
-        <div>
-            <label for="arquivo">Importar planilha (.csv ou .xlsx):</label><br>
-            <input type="file" id="arquivo" accept=".xlsx, .xls, .csv" onchange="importarPlanilha()"><br><br>
+            <dialog id="dlg">
+                <h3 id="dlgT">Armário</h3>
+                <p id="dlgS" class="muted"></p>
+                <div id="dlgForm">
+                    <label for="dlgNome">Aluno</label>
+                    <input id="dlgNome" type="text" list="dlAlunos" placeholder="Nome do aluno" autocomplete="off">
+                    <datalist id="dlAlunos"></datalist>
+                    <label for="dlgPer">Período</label>
+                    <select id="dlgPer"><option>Anual</option><option>Semestral</option></select>
+                </div>
+                <div class="grp end">
+                    <button class="btn ghost" type="button" onclick="$('dlg').close()">Cancelar</button>
+                    <button class="btn" id="dlgOk" type="button">Alugar armário</button>
+                </div>
+            </dialog>
         </div>
 
-        <button id="add-aluno" type="submit">Adicionar Aluno</button>
-        <button id="add-aluno" type="button" onclick="limparFormulario()">Limpar/Reset</button>
-    </form>
-    
-    <footer>
-        &copy; 2025 Colégio Sinodal Prado Gravataí. Todos os direitos reservados.
-    </footer>
+        <!-- CADASTRO -->
+        <div class="view" id="v-cadastro">
+            <div class="vhead"><h2>Adicionar ou editar aluno</h2><p>Para editar, use o botão Editar na linha do aluno. A matrícula não muda depois de cadastrada.</p></div>
+            <form class="card fgrid" id="alunoform">
+                <div><label for="turma">Turma</label><select id="turma"></select></div>
+                <div><label for="matricula">Matrícula</label><input type="text" placeholder="Somente números" id="matricula" required pattern="\d+" title="A matrícula deve conter apenas números"></div>
+                <div><label for="nomeAluno">Nome do aluno</label><input type="text" placeholder="Digite o nome do aluno" id="nomeAluno" required></div>
+                <div><label for="emailAluno">E-mail do aluno</label><input type="email" placeholder="Digite o e-mail" id="emailAluno" required></div>
+                <div><label for="responsavel1">Nome do responsável 1</label><input type="text" placeholder="Digite o nome do responsável" id="responsavel1" required></div>
+                <div><label for="emailResponsavel1">E-mail do responsável 1</label><input type="email" placeholder="Digite o e-mail" id="emailResponsavel1" required></div>
+                <div><label for="responsavel2">Nome do responsável 2</label><input type="text" placeholder="Opcional" id="responsavel2"></div>
+                <div><label for="emailResponsavel2">E-mail do responsável 2</label><input type="email" placeholder="Opcional" id="emailResponsavel2"></div>
+                <div class="full drop">
+                    <label for="arquivo">Importar planilha (.csv ou .xlsx)</label>
+                    <input type="file" id="arquivo" accept=".xlsx, .xls, .csv" onchange="importarPlanilha()">
+                </div>
+                <div class="full grp end">
+                    <button class="btn ghost" id="reset-aluno" type="button" onclick="limparFormulario()">Limpar</button>
+                    <button class="btn" id="add-aluno" type="submit">Adicionar aluno</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-</body>
+    <footer>&copy; <span id="ano">2026</span> Colégio Sinodal Prado Gravataí. Todos os direitos reservados.</footer>
+</main>
+
+<div class="selbar" id="selbar">
+    <span id="selN">0 destinatários selecionados</span>
+    <button class="btn lime" type="button" onclick="mostrar('email')">Escrever e-mail</button>
+</div>
+<div id="toasts" aria-live="polite"></div>
+
 <script src="script.js"></script>
+</body>
 </html>
